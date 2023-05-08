@@ -58,6 +58,9 @@
        (rev* (rest ls)
              (cons (first ls) acc)))))) ; benötigen keinen zus. Speicher
 
+(define (foo bar baz)
+  (list bar baz))
+
 ; gänginge Repräsentation für Kontext zur Laufzeit:
 ; Stack
 ; gängige Runtimes: Stack feste Größe, klein im Vergleich zum Hauptspeicher
