@@ -261,7 +261,7 @@ FP: neue Fälle schwer, neue Operationen einfach
 (define list-sum
   (lambda (list)
     (cond
-      ((empty? list) 0)
+      ((empty? list) 0) ; 0 ist das neutrale Element der Addition
       ((cons? list)
        (+ (first list)
           (list-sum (rest list)))))))
