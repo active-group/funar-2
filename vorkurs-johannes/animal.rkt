@@ -117,9 +117,11 @@
 ;; - Gewicht
 (define-record dillo
   make-dillo
-  dillo?
+  dillo? ;; nachträglich hinzugefügt
   (dillo-alive? boolean)
   (dillo-weight number))
+
+(: dillo? (any -> boolean))
 
 ;; lebendiger Dillo
 (define dillo1 (make-dillo #t 10))
