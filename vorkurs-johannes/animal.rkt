@@ -7,7 +7,10 @@
 
 ;; Beschreiben die Domäne natürlichsprachlich:
 
-;; Haustier:
-;; - Katze
-;; - Hund
+;; Datendefinition (Aufzählung)
+
+;; Haustier _ist eins der Folgenden_:
+;; - Katze -ODER-
+;; - Hund -ODER-
 ;; - Schlange
+
