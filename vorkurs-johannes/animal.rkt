@@ -109,7 +109,21 @@
 ;; Ein Tier ist eins der Folgenden:
 ;; - Gürteltier -ODER-
 ;; - Papagei
+(define animal
+  (signature (mixed dillo parrot)))
 
+;; Ein Gürteltier hat folgende Eigenschaft:
+;; - lebendig oder tot? -UND-
+;; - Gewicht
+(define-record dillo
+  make-dillo
+  (dillo-alive? boolean)
+  (dillo-weight number))
+
+;; lebendiger Dillo
+(define dillo1 (make-dillo #t 10))
+;; toter Dillo
+(define dillo2 (make-dillo #f 8))
 
 
 
