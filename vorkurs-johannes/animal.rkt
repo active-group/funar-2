@@ -49,7 +49,11 @@
 ;; - Stunde -UND-
 ;; - Minute
 (define-record time  ;; Record definieren
-  make-time ;; Konstruktor
+  make-time ;; Konstruktor (Name frei wählbar)
+  ;; Bestandteile:
+  (time-hour hour) ;; Selektor/Accessor
+  (time-minute minute))
+  
 
 
 
