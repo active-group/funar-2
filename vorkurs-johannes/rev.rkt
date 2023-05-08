@@ -58,6 +58,15 @@
        (rev* (rest ls)
              (cons (first ls) acc)))))) ; benötigen keinen zus. Speicher
 
+; gänginge Repräsentation für Kontext zur Laufzeit:
+; Stack
+; gängige Runtimes: Stack feste Größe, klein im Vergleich zum Hauptspeicher
 
+; JVM: auch Tail-Calls verbrauchen Speicher
+; => auf JVM-Sprachen gibt es spezielle Konstrukte für Endrekursion
+; Kotlin: tailrec
+; Scala: @tailrec
+; Clojure: loop
 
+; Übung: bel. Funktion endrekursiv schreiben!
 
