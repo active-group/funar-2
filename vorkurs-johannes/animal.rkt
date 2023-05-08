@@ -110,7 +110,7 @@
 ;; - Gürteltier -ODER-
 ;; - Papagei
 (define animal
-    (signature (mixed dillo parrot)))
+  (signature (mixed dillo parrot)))
 
 ;; Ein Gürteltier hat folgende Eigenschaft:
 ;; - lebendig oder tot? -UND-
