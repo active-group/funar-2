@@ -282,3 +282,9 @@ FP: neue Fälle schwer, neue Operationen einfach
 
 ; Alle ungeraden Elemente einer Liste extrahieren
 (: extract-odds (list-of-numbers -> list-of-numbers))
+
+; odd?
+
+
+
+
