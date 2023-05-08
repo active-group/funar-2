@@ -104,4 +104,14 @@
                (remainder msm 60))))
 
 
+;;;;; Tiere auf dem texanischen Highway
+
+;; Ein Tier ist eins der Folgenden:
+;; - Gürteltier -ODER-
+;; - Papagei
+
+
+
+
+
 
