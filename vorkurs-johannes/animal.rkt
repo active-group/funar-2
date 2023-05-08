@@ -311,6 +311,6 @@ FP: neue Fälle schwer, neue Operationen einfach
       ((empty? list) empty)
       ((cons? list)
        (if (p? (first list))
-           (cons (first list) (extract (rest list)))
-           (extract (rest list)))))))
+           (cons (first list) (extract p? (rest list)))
+           (extract p? (rest list)))))))
 
