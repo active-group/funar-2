@@ -294,6 +294,8 @@ FP: neue Fälle schwer, neue Operationen einfach
       ((cons? list)
        (op (first list)
            (??? (rest list)))))))
+(check-expect (??? 1 * list2)
+              (list-product list2))
 
 ; Alle ungeraden Elemente einer Liste extrahieren
 (: extract-odds (list-of-numbers -> list-of-numbers))
