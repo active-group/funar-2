@@ -266,5 +266,18 @@ FP: neue Fälle schwer, neue Operationen einfach
        (+ (first list)
           (list-sum (rest list)))))))
  
-(list-sum list3)
-    
+; Produkt aller Listenelement
+(: list-product (list-of-numbers -> number))
+
+(check-expect (list-product list4)
+              360)
+
+(define list-product
+  (lambda (list)
+    (cond
+      ((empty? list) 1) ; 1 ist das neutrale Element der Multiplikation
+      ((cons? list)
+       (* (first list)
+          (list-product (rest list)))))))
+
+
