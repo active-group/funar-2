@@ -55,9 +55,23 @@
 
 (: tile (image image -> image))
 
-;; Tests
+;; 3. Tests
 
 (check-expect (tile square1 star1)
               (above
                (beside square1 star1)
                (beside star1 square1)))
+
+;; Funktion
+
+(define tile
+  ;; v   hier beginnt eine Funktion
+  ;;        v   Argumente in Klammern
+  (lambda (image1 image2)
+    ;; Body der Funktion -> Ergebnis
+    (above
+     (beside image1 image2)
+     (beside image2 image1))))
+
+
+
