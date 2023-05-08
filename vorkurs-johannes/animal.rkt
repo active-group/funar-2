@@ -243,6 +243,7 @@ FP: neue Fälle schwer, neue Operationen einfach
 ;; Eine Cons-Liste besteht aus:
 ;; - erstem Element
 ;; - Rest-Liste
+;; Jetzt: polymorph im Element-Typ
 (define-record (cons-list-of element) ; Makro generiert lambdas für uns
   cons
   cons?
