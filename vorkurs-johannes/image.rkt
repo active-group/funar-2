@@ -33,8 +33,27 @@
 
 ;; Kachel ist 2x2-Muster aus Bildern
 (above
- (beside circle1 star1)
- (beside star1 circle1))
+ (beside square1 star1)
+ (beside star1 square1))
+
+(above
+ (beside square1 circle1)
+ (beside circle1 square1))
+
+;; Abstraktion:
+;; - Unterschieden Namen geben
+;; Funktionen dienen der Abstraktion
+
+;; Deutsche Beamtenmethode
+;; Konstruktionsanleitung!
+
+;; 1. Kurzbeschreibung
+
+;; Quadratisches Kachelmuster aus zwei Bildern bilden
+
+;; 2. Signatur "Klammer + Doppelpunkt"
+
+(: tile (image image -> image))
 
 
 
