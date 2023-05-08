@@ -4,7 +4,7 @@
 ;;#lang deinprogramm/sdp
 
 ;; Listen erstellen:
-(define list4 (list 5 3 6 4))
+;(define list4 (list 5 3 6 4))
 
 ;; first und rest funktionieren genauso
 
