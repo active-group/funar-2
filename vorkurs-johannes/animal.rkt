@@ -304,3 +304,13 @@ FP: neue Fälle schwer, neue Operationen einfach
               (cons 6 (cons 4 empty)))
 (check-expect (extract odd? list4)
               (cons 5 (cons 3 empty)))
+
+(define extract-odds
+  (lambda (p? list)
+    (cond
+      ((empty? list) empty)
+      ((cons? list)
+       (if (p? (first list))
+           (cons (first list) (extract-odds (rest list)))
+           (extract-odds (rest list)))))))
+
