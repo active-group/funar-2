@@ -40,7 +40,7 @@
       ;; besteht aus 3 Ausdrücken
       ;; einer für jedes Tier
       ;; -> Paare aus Bedingung und Wahrheitswert
-      ((equal? pet "dog") #t) ;; string-equals-p
+      ((=? pet "dog") #t) ;; string-equals-p
       ((string=? pet "cat") #t)
       ((string=? pet "snake") #f)))) ;; conditional
 
