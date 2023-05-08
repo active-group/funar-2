@@ -110,7 +110,7 @@
 ;; - Gürteltier -ODER-
 ;; - Papagei
 #;(define animal
-  (signature (mixed dillo parrot)))
+    (signature (mixed dillo parrot)))
 
 ;; Ein Gürteltier hat folgende Eigenschaft:
 ;; - lebendig oder tot? -UND-
@@ -130,4 +130,11 @@
 
 (check-expect (run-over-dillo dillo1)
               (make-dillo #f 10))
+(check-expect (run-over-dillo dillo2)
+              dillo2)
+
+(define run-over-dillo
+  (lambda (dillo)
+    (make-dillo #f
+                (dillo-weight dillo))))
 
