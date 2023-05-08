@@ -109,7 +109,7 @@
 ;; Ein Tier ist eins der Folgenden:
 ;; - Gürteltier -ODER-
 ;; - Papagei
-(define animal
+#;(define animal
   (signature (mixed dillo parrot)))
 
 ;; Ein Gürteltier hat folgende Eigenschaft:
