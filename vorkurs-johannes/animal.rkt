@@ -293,11 +293,11 @@ FP: neue Fälle schwer, neue Operationen einfach
       ((empty? list) neutral)
       ((cons? list)
        (op (first list)
-           (??? neutral op (rest list)))))))
+           (list-fold neutral op (rest list)))))))
 
-(check-expect (??? 1 * list2)
+(check-expect (list-fold 1 * list2)
               (list-product list2))
-(check-expect (??? 0 + list2)
+(check-expect (list-fold 0 + list2)
               (list-sum list2))
 
 ; Alle ungeraden Elemente einer Liste extrahieren
