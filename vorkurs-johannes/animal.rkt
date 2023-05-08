@@ -286,6 +286,15 @@ FP: neue Fälle schwer, neue Operationen einfach
        (* (first list)
           (list-product (rest list)))))))
 
+;; später gemacht:
+(define ???
+  (lambda (neutral op list)
+    (cond
+      ((empty? list) 1) ; 1 ist das neutrale Element der Multiplikation
+      ((cons? list)
+       (op (first list)
+           (??? (rest list)))))))
+
 ; Alle ungeraden Elemente einer Liste extrahieren
 (: extract-odds (list-of-numbers -> list-of-numbers))
 
@@ -343,4 +352,3 @@ FP: neue Fälle schwer, neue Operationen einfach
 
 
 
-  
