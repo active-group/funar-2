@@ -3,3 +3,11 @@
 #reader(lib "beginner-reader.rkt" "deinprogramm" "sdp")((modname animal) (read-case-sensitive #f) (teachpacks ()) (deinprogramm-settings #(#f write repeating-decimal #f #t none explicit #f ())))
 #lang deinprogramm/sdp/beginner
 
+;; Tiere
+
+;; Beschreiben die Domäne natürlichsprachlich:
+
+;; Haustier:
+;; - Katze
+;; - Hund
+;; - Schlange
