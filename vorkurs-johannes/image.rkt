@@ -3,3 +3,8 @@
 #reader(lib "beginner-reader.rkt" "deinprogramm" "sdp")((modname image) (read-case-sensitive #f) (teachpacks ()) (deinprogramm-settings #(#f write repeating-decimal #f #t none explicit #f ())))
 ;;#lang deinprogramm/sdp/beginner
 
+;; REPL - Read Eval Print Loop
+
+;; Booleans: #t #f
+
+(require deinprogramm/sdp/image)
