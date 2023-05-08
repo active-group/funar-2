@@ -247,7 +247,7 @@ FP: neue Fälle schwer, neue Operationen einfach
 (define-record (cons-list-of element) ; Makro generiert lambdas für uns
   cons
   cons?
-  (first number)
+  (first element)
   (rest (list-of element)))
 
 (define list1 (cons 5 empty))
