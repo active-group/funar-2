@@ -231,8 +231,8 @@ FP: neue Fälle schwer, neue Operationen einfach
 
 ;; Die leere Liste...
 #;(define-record empty-list
-  make-empty-list
-  empty?)
+    make-empty-list
+    empty?)
 (define-singleton empty-list
   empty ;; Wert statt Konstruktor
   empty?)
@@ -258,9 +258,13 @@ FP: neue Fälle schwer, neue Operationen einfach
 (check-expect (list-sum list4)
               18)
 
+(define list-sum
+  (lambda (list)
+    (cond
+      ((empty? list) ...)
+      ((cons? list)
+       (+ (first list)
+          (list-sum (rest list)))))))
 
 
-
-
-
-
+    
