@@ -139,7 +139,7 @@
                 (dillo-weight dillo))))
 
 ;; Gürteltiere füttern
-(: feed-dillo (dillo number) -> dillo)
+(: feed-dillo (dillo number -> dillo))
 
 (check-expect (feed-dillo dillo1 5)
               (make-dillo #t 15))
