@@ -44,8 +44,10 @@
       ((string=? pet "cat") #t)
       ((string=? pet "snake") #f)))) ;; conditional
 
-
-
+;; Uhrzeit _besteht aus_/_hat folgende Eigenschaften_:
+;; -> zusammengesetzte Daten
+;; - Stunde -UND-
+;; - Minute
 
 
 
