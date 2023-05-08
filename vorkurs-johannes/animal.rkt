@@ -57,6 +57,7 @@
   (time-hour hour) ;; Selektor/Accessor
   (time-minute minute))
 
+;; Signaturen
 (: make-time (hour minute -> time))
 (: time-hour (time -> hour))
 (: time-minute (time -> minute))
@@ -64,6 +65,26 @@
 (define time1 (make-time 11 23))
 (define time2 (make-time 14 11))
 
+;; Minuten seit Mitternacht berechnen
+(: msm (time -> natural))
 
+(check-expect (msm time1)
+              683)
+(check-expect (msm time2)
+              851)
 
+;; Gerüst
+#;(define msm
+    (lambda (time)
+      ...))
 
+;; Schablone
+#;(define msm
+    (lambda (time)
+      ... (time-hour time) ...
+      ... (time-minute time) ...))
+
+(define msm
+  (lambda (time)
+    (+ (* 60 (time-hour time))
+       (time-minute time))))
