@@ -48,8 +48,8 @@
 ;; -> zusammengesetzte Daten
 ;; - Stunde -UND-
 ;; - Minute
-
-
+(define-record time  ;; Record definieren
+  make-time ;; Konstruktor
 
 
 
