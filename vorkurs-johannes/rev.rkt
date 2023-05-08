@@ -48,9 +48,11 @@
               (list 3 2 1))
 
 (define rev*
+  ; Schleifeninvariante
+  ; acc ist Liste aller bereits gesehenen Elemente in umg. Reihenfolge
   (lambda (ls acc) ;; Akkumulator
     (cond
-      ((empty? ls) ...)
+      ((empty? ls) acc)
       ((cons? ls)
        ... (first ls) ...
        (rev* (rest ls) ...)))))
