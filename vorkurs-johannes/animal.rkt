@@ -27,3 +27,12 @@
               #t)
 (check-expect (cute? "snake")
               #f)
+
+;; Gerüst
+(define cute?
+  (lambda (pet)
+    ...))
+
+
+
+
