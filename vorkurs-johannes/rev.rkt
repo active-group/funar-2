@@ -56,7 +56,7 @@
       ((cons? ls)       ; ls ist (list 4), acc ist (list 3 2 1)
        ; v    rev* steht in sog. tail-call-Position
        (rev* (rest ls)
-             (cons (first ls) acc))))))
+             (cons (first ls) acc)))))) ; benötigen keinen zus. Speicher
 
 
 
