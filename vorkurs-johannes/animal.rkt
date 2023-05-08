@@ -304,7 +304,7 @@ FP: neue Fälle schwer, neue Operationen einfach
            (extract-odds (rest list)))))))
 
 ; Alle Elemente einer Liste extrahieren, die ein Prädikat erfüllen
-(: extract ((number -> boolean) list-of-numbers -> list-of-numbers))
+(: extract ((%a -> boolean) (list-of %a) -> (list-of %a)))
 
 (check-expect (extract even? list4)
               (cons 6 (cons 4 empty)))
