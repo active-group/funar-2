@@ -250,3 +250,17 @@ FP: neue Fälle schwer, neue Operationen einfach
 (define list2 (cons 5 (cons 8 empty)))
 (define list3 (cons 6 (cons 3 (cons 4 empty))))
 (define list4 (cons 5 list3))
+
+
+; Summe aller Elemente
+(: list-sum (list-of-numbers -> number))
+
+(check-expect (list-sum list4)
+              18)
+
+
+
+
+
+
+
