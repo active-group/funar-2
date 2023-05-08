@@ -22,4 +22,4 @@
 
 ;; Badezimmer mit Kacheln auslegen
 
-(overlay star1 circle1)
+(define overlay1 (overlay star1 circle1))
