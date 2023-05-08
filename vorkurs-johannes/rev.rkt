@@ -23,6 +23,9 @@
         (rev (rest list)) ; 4 3 2
         (first list))))))  ; 1 --> fehlt: hinten an Liste anhängen
 
+;; Laufzeit:
+;; 1 + 2 + 3 + ... + n = n * (n+1) / 2 in O(n^2)
+
 ; Element hinten an Liste anhängen
 (: append-element ((list-of %a) %a -> (list-of %a)))
 
