@@ -248,7 +248,7 @@ FP: neue Fälle schwer, neue Operationen einfach
   cons
   cons?
   (first number)
-  (rest list-of-numbers))
+  (rest (list-of element)))
 
 (define list1 (cons 5 empty))
 (define list2 (cons 5 (cons 8 empty)))
