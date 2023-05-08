@@ -243,7 +243,7 @@ FP: neue Fälle schwer, neue Operationen einfach
 ;; Eine Cons-Liste besteht aus:
 ;; - erstem Element
 ;; - Rest-Liste
-(define-record cons-list-of-numbers
+(define-record (cons-list-of element) ; Makro generiert lambdas für uns
   cons
   cons?
   (first number)
