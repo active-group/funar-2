@@ -200,6 +200,21 @@
   (lambda (animal)
     (cond
       ((dillo? animal) (run-over-dillo animal))
-      ((parrot? animal) (run-over-parrot animal)))))
+      ((parrot? animal) (run-over-parrot animal))
+      ... ... )))
 
+(define pet-animal (...
 
+#|
+interface Animal { Animal runOver();  Animal feed(int amount);  pet(); }
+
+class Dillo implements Animal { @Override Animal runOver(); }
+
+class Parrot implements Animal { ... }
+
+class Snake implements Animal { ... runOver(); }
+
+OOP: neue Fälle einfach, neue Operationen "schwer"
+FP: neue Fälle schwer, neue Operationen einfach
+
+|#
