@@ -19,8 +19,9 @@
     (cond
       ((empty? list) empty)
       ((cons? list)
-       (rev (rest list)) ... ; 4 3 2
-       (first list) ...))))  ; 1 --> fehlt: hinten an Liste anhängen
+       (append-element
+        (rev (rest list)) ; 4 3 2
+        (first list))))))  ; 1 --> fehlt: hinten an Liste anhängen
 
 ; Element hinten an Liste anhängen
 (: append-element ((list-of %a) %a -> (list-of %a)))
@@ -42,4 +43,3 @@
 
 
 
-  
