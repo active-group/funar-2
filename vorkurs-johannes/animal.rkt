@@ -266,7 +266,7 @@ FP: neue Fälle schwer, neue Operationen einfach
        (+ (first list)
           (list-sum (rest list)))))))
  
-; Produkt aller Listenelement
+; Produkt aller Listenelemente
 (: list-product (list-of-numbers -> number))
 
 (check-expect (list-product list4)
