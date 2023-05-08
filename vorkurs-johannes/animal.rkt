@@ -163,6 +163,23 @@
   (parrot-sentence string)
   (parrot-weight number))
 
+;; Begrüßungspapagei
+(define parrot1 (make-parrot "Hallo" 1))
+;; Verabschiedungspapagei
+(define parrot2 (make-parrot "Ciao" 2))
+
+;; Papageien überfahren
+(: run-over-parrot (parrot -> parrot))
+
+(check-expect (run-over-parrot parrot1)
+              (make-parrot "" 1))
+(check-expect (run-over-parrot parrot2)
+              (make-parrot "" 2))
+
+(define run-over-parrot
+  (lambda (parrot)
+    (make-parrot "" (parrot-weight parrot))))
+
 
 
 
