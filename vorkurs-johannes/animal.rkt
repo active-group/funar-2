@@ -217,4 +217,6 @@ class Snake implements Animal { ... runOver(); }
 OOP: neue Fälle einfach, neue Operationen "schwer"
 FP: neue Fälle schwer, neue Operationen einfach
 
+--> Expression problem
+
 |#
