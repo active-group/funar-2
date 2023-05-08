@@ -290,7 +290,7 @@ FP: neue Fälle schwer, neue Operationen einfach
 (define ???
   (lambda (neutral op list)
     (cond
-      ((empty? list) 1) ; 1 ist das neutrale Element der Multiplikation
+      ((empty? list) neutral)
       ((cons? list)
        (op (first list)
            (??? (rest list)))))))
