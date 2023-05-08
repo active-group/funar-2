@@ -44,6 +44,9 @@
       ((string=? pet "cat") #t)
       ((string=? pet "snake") #f)))) ;; conditional
 
+(define hour (signature (integer-from-to 0 23)))
+(define minute (signature (integer-from-to 0 59)))
+
 ;; Uhrzeit _besteht aus_/_hat folgende Eigenschaften_:
 ;; -> zusammengesetzte Daten
 ;; - Stunde -UND-
