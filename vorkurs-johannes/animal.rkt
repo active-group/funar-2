@@ -200,10 +200,7 @@
   (lambda (animal)
     (cond
       ((dillo? animal) (run-over-dillo animal))
-      ((parrot? animal) (run-over-parrot animal))
-      ... ... )))
-
-(define pet-animal (...
+      ((parrot? animal) (run-over-parrot animal)))))
 
 #|
 interface Animal { Animal runOver();  Animal feed(int amount);  pet(); }
@@ -217,6 +214,6 @@ class Snake implements Animal { ... runOver(); }
 OOP: neue Fälle einfach, neue Operationen "schwer"
 FP: neue Fälle schwer, neue Operationen einfach
 
---> Expression problem
+--> Expression problem (s. Philip Wadler)
 
 |#
