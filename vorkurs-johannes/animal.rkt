@@ -229,4 +229,12 @@ FP: neue Fälle schwer, neue Operationen einfach
   (signature (mixed empty-list
                     cons-list-of-numbers)))
 
+;; Die leere Liste...
+(define-record empty-list
+  make-empty-list
+  empty?)
+
+
+
+
 
