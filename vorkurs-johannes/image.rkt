@@ -12,3 +12,6 @@
 ;; https://docs.racket-lang.org/
 
 ;; https://github.com/active-group/funar-2
+
+;; Dingen Namen geben
+(define x 3)
