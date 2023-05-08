@@ -29,10 +29,13 @@
               #f)
 
 ;; Gerüst
-(define cute?
+#;(define cute?   ;; <- #; heißt: folgender Ausdruck ist auskommentiert
   (lambda (pet)
     ...))
 
-
+;; Schablone
+(define cute?
+  (lambda (pet)
+    ...))
 
 
