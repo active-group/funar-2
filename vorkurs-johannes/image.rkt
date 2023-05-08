@@ -9,3 +9,6 @@
 
 (require deinprogramm/sdp/image)
 
+;; https://docs.racket-lang.org/
+
+;; https://github.com/active-group/funar-2
