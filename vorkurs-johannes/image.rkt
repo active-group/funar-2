@@ -22,4 +22,21 @@
 
 ;; Badezimmer mit Kacheln auslegen
 
-(define overlay1 (overlay star1 circle1))
+;; Bilder überlagern
+;(define overlay1 (overlay star1 circle1))
+
+;; übereinander
+;(above star1 square1)
+
+;; nebeneinander
+;(beside circle1 circle1)
+
+;; Kachel ist 2x2-Muster aus Bildern
+(above
+ (beside circle1 star1)
+ (beside star1 circle1))
+
+
+
+
+
