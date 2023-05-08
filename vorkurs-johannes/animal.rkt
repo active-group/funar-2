@@ -266,5 +266,5 @@ FP: neue Fälle schwer, neue Operationen einfach
        (+ (first list)
           (list-sum (rest list)))))))
  
-
+(list-sum list3)
     
