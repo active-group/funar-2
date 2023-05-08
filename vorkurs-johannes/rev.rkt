@@ -7,3 +7,9 @@
 (define list4 (list 5 3 6 4))
 
 ;; first und rest funktionieren genauso
+
+; Liste umdrehen
+(: rev ((list-of %a) -> (list-of %a)))
+
+(check-expect (rev (list 1 2 3 4))
+              (list 4 3 2 1))
