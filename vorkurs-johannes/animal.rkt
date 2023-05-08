@@ -320,3 +320,17 @@ FP: neue Fälle schwer, neue Operationen einfach
            (cons (first list) (extract p? (rest list)))
            (extract p? (rest list)))))))
 
+; Eine Funktion auf alle Elemente einer Liste anwenden
+(: list-map ((%a -> %b) (list-of %a) -> (list-of %b)))
+
+(check-expect (list-map (lambda (x) (* 2 x)) list2)
+              (cons 10 (cons 16 empty)))
+
+
+
+
+
+
+
+
+
