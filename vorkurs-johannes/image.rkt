@@ -55,7 +55,9 @@
 
 (: tile (image image -> image))
 
+;; Tests
 
-
-
-
+(check-expect (tile square1 star1)
+              (above
+               (beside square1 star1)
+               (beside star1 square1)))
