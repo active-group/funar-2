@@ -117,6 +117,7 @@
 ;; - Gewicht
 (define-record dillo
   make-dillo
+  dillo?
   (dillo-alive? boolean)
   (dillo-weight number))
 
@@ -192,6 +193,10 @@
 (check-expect (run-over-animal parrot2)
               (run-over-parrot parrot2))
 
-
+(define run-over-animal
+  (lambda (animal)
+    (cond
+      (... ...)
+      (... ...))))
 
 
