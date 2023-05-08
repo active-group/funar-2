@@ -237,6 +237,13 @@ FP: neue Fälle schwer, neue Operationen einfach
   empty ;; Wert statt Konstruktor
   empty?)
 
+;; Eine Cons-Liste besteht aus:
+;; - erstem Element
+;; - Rest-Liste
+(define-record cons-list-of-numbers
+  cons
+  cons?
+  (first number)
+  (rest list-of-numbers))
 
-
-
+(define list1 (cons 5 empty))
