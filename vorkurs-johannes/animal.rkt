@@ -247,3 +247,6 @@ FP: neue Fälle schwer, neue Operationen einfach
   (rest list-of-numbers))
 
 (define list1 (cons 5 empty))
+(define list2 (cons 5 (cons 8 empty)))
+(define list3 (cons 6 (cons 3 (cons 4 empty))))
+(define list4 (cons 5 list3))
