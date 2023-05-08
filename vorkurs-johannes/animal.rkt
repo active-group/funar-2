@@ -30,12 +30,25 @@
 
 ;; Gerüst
 #;(define cute?   ;; <- #; heißt: folgender Ausdruck ist auskommentiert
-  (lambda (pet)
-    ...))
+    (lambda (pet)
+      ...))
 
 ;; Schablone
 (define cute?
   (lambda (pet)
-    ...))
+    (cond
+      ;; besteht aus 3 Ausdrücken
+      ;; einer für jedes Tier
+      ;; -> Paare aus Bedingung und Wahrheitswert
+      ((string=? pet "dog") #t) ;; string-equals-p
+      ((string=? pet "cat") #t)
+      ((string=? pet "snake") #f)))) ;; conditional
+
+
+
+
+
+
+
 
 
