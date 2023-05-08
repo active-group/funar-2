@@ -32,10 +32,14 @@
   (lambda (ls a)
     (cond
       ((empty? ls) (list a))
-      ((cons? ls) ...))))
+      ((cons? ls)
+       (cons
+        (first ls)  ; 1
+        (append-element (rest ls) a))))))
 
 
 
 
 
 
+  
