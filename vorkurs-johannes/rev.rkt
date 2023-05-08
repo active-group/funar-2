@@ -73,3 +73,4 @@
 
 
 ;;; BBB: https://bbb.active-group.de/b/joh-nn2-wlw-wp2
+;;; GHCup: https://www.haskell.org/ghcup/
