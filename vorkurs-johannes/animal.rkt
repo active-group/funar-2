@@ -56,7 +56,13 @@
   ;; Bestandteile:
   (time-hour hour) ;; Selektor/Accessor
   (time-minute minute))
-  
+
+(: make-time (hour minute -> time))
+(: time-hour (time -> hour))
+(: time-minute (time -> minute))
+
+(define time1 (make-time 11 23))
+(define time2 (make-time 14 11))
 
 
 
