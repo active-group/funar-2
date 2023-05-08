@@ -287,7 +287,7 @@ FP: neue Fälle schwer, neue Operationen einfach
           (list-product (rest list)))))))
 
 ;; später gemacht:
-(define ???
+(define list-fold
   (lambda (neutral op list)
     (cond
       ((empty? list) neutral)
