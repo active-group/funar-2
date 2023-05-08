@@ -226,8 +226,11 @@ FP: neue Fälle schwer, neue Operationen einfach
 ;; - die leere Liste
 ;; - eine Cons-Liste, bestehend aus erstem Element und Rest-Liste
 (define list-of
-  (signature (mixed empty-list
-                    cons-list-of)))
+  (lambda (element)
+    (signature (mixed empty-list
+                      (cons-list-of element)))))
+
+(list-of number)
 
 ;; Die leere Liste...
 #;(define-record empty-list
