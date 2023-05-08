@@ -225,7 +225,7 @@ FP: neue Fälle schwer, neue Operationen einfach
 ;; Eine Liste (von Zahlen) ist eins der Folgenden:
 ;; - die leere Liste
 ;; - eine Cons-Liste, bestehend aus erstem Element und Rest-Liste
-(define list-of-numbers
+#;(define list-of-numbers
   (signature (mixed empty-list
                     cons-list-of-numbers)))
 
