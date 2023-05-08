@@ -16,3 +16,14 @@
 
 (define pet
   (signature (enum "cat" "dog" "snake")))
+
+;; Ist ein Haustier niedlich?
+(: cute? ;; cute-p (predicate)
+   (pet -> boolean))
+
+(check-expect (cute? "dog")
+              #t)
+(check-expect (cute? "cat")
+              #t)
+(check-expect (cute? "snake")
+              #f)
