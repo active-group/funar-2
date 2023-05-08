@@ -155,7 +155,13 @@
                     (+ amount weight)
                     weight))))
 
-
+;; Ein Papagei hat folgende Eigenschaften:
+;; - ein Satz -UND-
+;; - ein Gewicht
+(define-record parrot
+  make-parrot
+  (parrot-sentence string)
+  (parrot-weight number))
 
 
 
