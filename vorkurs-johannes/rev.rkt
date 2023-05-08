@@ -41,7 +41,19 @@
         (first ls)  ; 1
         (append-element (rest ls) a))))))
 
+; Liste umdrehen, mit Zwischenergebnis
+(: rev* ((list-of %a) (list-of %a) -> (list-of %a)))
 
+(check-expect (rev* (list 1 2 3) empty)
+              (list 3 2 1))
+
+(define rev*
+  (lambda (ls acc) ;; Akkumulator
+    (cond
+      ((empty? ls) ...)
+      ((cons? ls)
+       ... (first ls) ...
+       (rev* (rest ls) ...)))))
 
 
 
