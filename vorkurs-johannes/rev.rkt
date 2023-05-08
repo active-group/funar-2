@@ -54,6 +54,7 @@
     (cond
       ((empty? ls) acc) ; 4 3 2 1
       ((cons? ls)       ; ls ist (list 4), acc ist (list 3 2 1)
+       ; v    rev* steht in sog. tail-call-Position
        (rev* (rest ls)
              (cons (first ls) acc))))))
 
