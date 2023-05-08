@@ -14,3 +14,5 @@
 ;; - Hund -ODER-
 ;; - Schlange
 
+(define pet
+  (signature (enum "cat" "dog" "snake")))
