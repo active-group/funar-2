@@ -326,6 +326,14 @@ FP: neue Fälle schwer, neue Operationen einfach
 (check-expect (list-map (lambda (x) (* 2 x)) list2)
               (cons 10 (cons 16 empty)))
 
+(define list-map
+  (lambda (f list)
+    (cond
+      ((empty? list) empty)
+      ((cons? list)
+       (cons
+        (f (first list))
+        (list-map f (rest list)))))))
 
 
 
@@ -334,3 +342,5 @@ FP: neue Fälle schwer, neue Operationen einfach
 
 
 
+
+  
