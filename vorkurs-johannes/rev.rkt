@@ -13,3 +13,29 @@
 
 (check-expect (rev (list 1 2 3 4))
               (list 4 3 2 1))
+
+(define rev
+  (lambda (list)
+    (cond
+      ((empty? list) empty)
+      ((cons? list)
+       (rev (rest list)) ... ; 4 3 2
+       (first list) ...))))  ; 1 --> fehlt: hinten an Liste anhängen
+
+; Element hinten an Liste anhängen
+(: append-element ((list-of %a) %a -> (list-of %a)))
+
+(check-expect (append-element (list 1 2 3) 4)
+              (list 1 2 3 4))
+
+(define append-element
+  (lambda (ls a)
+    (cond
+      ((empty? ls) (list a))
+      ((cons? ls) ...))))
+
+
+
+
+
+
