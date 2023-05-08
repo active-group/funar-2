@@ -71,3 +71,5 @@
 
 ; Übung: bel. Funktion endrekursiv schreiben!
 
+
+;;; BBB: https://bbb.active-group.de/b/joh-nn2-wlw-wp2
