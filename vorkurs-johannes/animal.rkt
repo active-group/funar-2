@@ -230,6 +230,8 @@ FP: neue Fälle schwer, neue Operationen einfach
     (signature (mixed empty-list
                       (cons-list-of element)))))
 
+(define list-of-numbers (list-of number))
+
 ;; Will schreiben: (list-of number)
 
 ;; Die leere Liste...
