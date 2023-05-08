@@ -19,3 +19,7 @@
 (define circle1 (circle 50 "solid" "green"))
 (define square1 (square 100 "outline" "red"))
 (define star1 (star 50 "solid" "yellow"))
+
+;; Badezimmer mit Kacheln auslegen
+
+(overlay star1 circle1)
