@@ -58,8 +58,6 @@
        (rev* (rest ls)
              (cons (first ls) acc)))))) ; benötigen keinen zus. Speicher
 
-(define (foo bar baz)
-  (list bar baz))
 
 ; gänginge Repräsentation für Kontext zur Laufzeit:
 ; Stack
