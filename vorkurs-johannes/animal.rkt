@@ -293,7 +293,8 @@ FP: neue Fälle schwer, neue Operationen einfach
       ((empty? list) neutral)
       ((cons? list)
        (op (first list)
-           (??? (rest list)))))))
+           (??? neutral op (rest list)))))))
+
 (check-expect (??? 1 * list2)
               (list-product list2))
 
