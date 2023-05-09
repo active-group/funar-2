@@ -231,3 +231,8 @@ listFold neutral op (x : xs) =
 -- Alle nat. Zahlen ab einer bestimmten
 natsFrom :: Integer -> [Integer]
 natsFrom n = n : natsFrom (n + 1)
+
+-- Streichen von Vielfachen einer Zahl
+strikeMultiples :: Integer -> [Integer] -> [Integer]
+strikeMultiples n list =
+    filter (\m -> mod m n /= 0) list
