@@ -194,3 +194,9 @@ data ListOf element =
 list1 :: ListOf Integer
 list1 = Cons 5 Empty
 -- ....
+
+-- Eingebauter Typ: []
+-- Datenkonstruktor:    :
+-- leere Liste: []
+list1' :: [Integer]
+list1' = 5 : []
