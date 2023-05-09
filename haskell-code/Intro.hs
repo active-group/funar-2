@@ -246,5 +246,8 @@ sieve (p : rest) =
     p : sieve (strikeMultiples p rest)
 
 
-safeDivide :: Double -> Double -> Double
-safeDivide x y = x / y
+safeDivide :: Double -> Double -> Optional Double
+safeDivide x y =
+    if y == 0
+        then ???
+        else x / y
