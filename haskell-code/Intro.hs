@@ -1,5 +1,6 @@
 module Intro where
-import qualified Data.Sequence.Internal.Sorting as Arg
+
+import Prelude hiding (Semigroup, Monoid)
 
 -- Signatur
 x :: Integer
