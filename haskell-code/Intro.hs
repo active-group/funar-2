@@ -288,3 +288,31 @@ doSomething x =
 
 -- In FP:
 -- Typklassen werden idR für "universelle" Abstraktionen verwendet
+
+{-
+
+Algebra:
+- Typ T
+- Operationen (mit Typsignaturen)
+- Gesetze / Gleichungen
+
+Addition:
+x + 0 = 0 + x = x     "0 ist neutral bzgl. Addition"
+
+Listen:
+list1 `concat` [] = [] `concat` list1 = list1
+
+-}
+
+-- Typ T
+-- Operation:  op ::  T -> T -> T
+-- Assoziativgesetz:  op a (op b c) == op (op a b) c
+-- Assoziativgesetz:  a `op` (b `op` c) == (a `op` b) `op` c
+
+-- alg. Struktur:   Halbgruppe
+
+-- "a erfüllt das Interface Semigroup"
+class Semigroup a where
+    -- Methoden
+    op :: a -> a -> a
+    -- fordern noch: assoziativ
