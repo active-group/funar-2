@@ -158,3 +158,6 @@ tup = ("abc", 17, \n -> n - 3)
 tupelFun :: (Int, Int) -> Int
 -- tupelFun (n, m) = n + m + 3
 tupelFun t = fst t + snd t + 3
+
+tuplify :: (a -> b -> c) -> ((a, b) -> c)
+tuplify = undefined
