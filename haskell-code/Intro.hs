@@ -316,3 +316,8 @@ class Semigroup a where
     -- Methoden
     op :: a -> a -> a
     -- fordern noch: assoziativ
+
+-- "Interface implementieren"
+-- --> instance
+instance Semigroup [a] where
+    op list1 list2 = list1 ++ list2  -- Listenkonkatenation
