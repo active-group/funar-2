@@ -253,4 +253,4 @@ safeDivide :: Double -> Double -> Optional Double
 safeDivide x y =
     if y == 0
         then Null
-        else x / y
+        else Result (x / y)
