@@ -284,3 +284,7 @@ doSomething x =
 --   abs :: a -> a
 --   signum :: a -> a
 --   fromInteger :: Integer -> a
+
+
+-- In FP:
+-- Typklassen werden idR für "universelle" Abstraktionen verwendet
