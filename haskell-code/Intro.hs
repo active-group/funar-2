@@ -156,4 +156,5 @@ tup :: (String, Integer, Integer -> Integer)
 tup = ("abc", 17, \n -> n - 3)
 
 tupelFun :: (Int, Int) -> Int
-tupelFun (n, m) = n + m + 3
+-- tupelFun (n, m) = n + m + 3
+tupelFun t = fst t + snd t + 3
