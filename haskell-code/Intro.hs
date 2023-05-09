@@ -165,3 +165,6 @@ tuplify :: (a -> b -> c) -> ((a, b) -> c)
 tuplify = \f -> (\(a, b) -> f a b)
 
 -- (tuplify (+)) (2, 3)
+
+untuplify :: ((a, b) -> c) -> (a -> b -> c)
+untuplify f = \a b -> f (a, b)
