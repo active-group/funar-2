@@ -134,3 +134,8 @@ data Animal' =
 -- Currying: Haskell ist implizit gecurryt
 -- mehrstellige Funktionen sind eigentlich einstellig,
 -- liefern aber Funktionen zurück, die die restlichen Arg. nehmen
+
+-- Higher-Order-Funktion:
+-- - Funktionen, die Funktionen als Argumente nehmen
+-- - Funktionen, die Funktionen zurückgeben
+-- - oder beides
