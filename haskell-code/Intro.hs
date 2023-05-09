@@ -126,6 +126,6 @@ data Parrot' = MkParrot' Sentence Weight
 data Animal' =
     DilloA Dillo' | ParrotA Parrot'
 
-runOverAnimal' :: Animal' -> Animal'
-runOverAnimal' (DilloA dillo) = undefined
-runOverAnimal' (ParrotA parrot) = undefined
+-- runOverAnimal' :: Animal' -> Animal'
+-- runOverAnimal' (DilloA dillo) = runOverDillo dillo
+-- runOverAnimal' (ParrotA parrot) = runOverParrot parrot
