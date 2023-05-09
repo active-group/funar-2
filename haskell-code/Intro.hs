@@ -259,3 +259,6 @@ safeDivide x y =
     if y == 0
         then Null
         else Result (x / y)
+
+doSomething x =
+    if 3 `safeDivide` x > 2 then 5 else 7
