@@ -263,5 +263,5 @@ safeDivide x y =
 doSomething x =
     -- if 3 `safeDivide` x > 2 then 5 else 7
     case 3 `safeDivide` x of
-        Null -> undefined
-        Result a -> undefined
+        Null -> 7
+        Result res -> if res > 2 then 5 else 7
