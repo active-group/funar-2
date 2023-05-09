@@ -212,7 +212,22 @@ listSum :: [Integer] -> Integer
 listSum [] = 0 -- neutrales Element
 listSum (n : rest) = n + listSum rest
 
-listFold :: a -> (b -> a -> a) -> [b] -> a
+listFold :: acc -> (b -> acc -> acc) -> [b] -> acc
 listFold neutral op [] = neutral
 listFold neutral op (x : xs) =
     op x (listFold neutral op xs)
+
+-- Sieb des Eratosthenes (Primzahlen ermitteln)
+-- 2 3 4 5 ...
+-- 2 3  5  7  9  11 ...
+-- 2 3  5  7    11 ...
+-- 2 3  5  7    11   13  17  ...
+
+-- lazy evaluation (vs. strikte Auswertung)
+-- strikt: bei einem Funktionsaufruf werden zuerst Arg. ausgewertet
+-- Haskell:
+-- Argumente werden erst ausgewertet, wenn ich sie benötige
+
+-- Alle nat. Zahlen ab einer bestimmten
+natsFrom :: Integer -> [Integer]
+natsFrom n = n : natsFrom (n + 1)
