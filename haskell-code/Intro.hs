@@ -117,3 +117,11 @@ parrot2 = MkParrot "Ciao" 2
 runOverAnimal :: Animal -> Animal
 runOverAnimal (MkDillo _ w) = MkDillo Dead w
 runOverAnimal (MkParrot _ w) = MkParrot "" w
+
+
+-- Alternative Modellierung
+data Dillo' = MkDillo' Liveness Weight
+data Parrot' = MkParrot' Sentence Weight
+
+data Animal' =
+    DilloA Dillo' | ParrotA Parrot'
