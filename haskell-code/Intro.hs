@@ -245,6 +245,9 @@ sieve [] = []
 sieve (p : rest) =
     p : sieve (strikeMultiples p rest)
 
+data Optional a =
+    Result a
+    | Null
 
 safeDivide :: Double -> Double -> Optional Double
 safeDivide x y =
