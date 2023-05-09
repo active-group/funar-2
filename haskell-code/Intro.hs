@@ -139,3 +139,6 @@ data Animal' =
 -- - Funktionen, die Funktionen als Argumente nehmen
 -- - Funktionen, die Funktionen zurückgeben
 -- - oder beides
+
+doSomething :: Config -> Int -> String
+doSomething config n = blabla n + timeout config
