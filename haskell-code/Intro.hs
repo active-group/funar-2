@@ -199,4 +199,8 @@ list1 = Cons 5 Empty
 -- Datenkonstruktor:    :
 -- leere Liste: []
 list1' :: [Integer]
-list1' = 5 : []
+list1' = 5 : []  -- 5 cons leere Liste
+-- list1' = (:) 5 []
+
+list2 :: [Integer]
+list2 = 1 : 2 : []
