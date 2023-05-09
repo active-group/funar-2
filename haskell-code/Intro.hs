@@ -28,7 +28,7 @@ data Pet = Cat | Dog | Snake
 --          ^  Werte
 
 -- Zwei Pets miteinander vergleichen
-eqPet :: Pet -> Pet -> Bool
+eqPet :: Pet -> (Pet -> Bool)
 eqPet Cat Cat = True
 eqPet Dog Dog = True
 eqPet Snake Snake = True
@@ -129,3 +129,4 @@ data Animal' =
 -- runOverAnimal' :: Animal' -> Animal'
 -- runOverAnimal' (DilloA dillo) = runOverDillo dillo
 -- runOverAnimal' (ParrotA parrot) = runOverParrot parrot
+
