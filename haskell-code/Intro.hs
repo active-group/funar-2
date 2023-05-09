@@ -112,3 +112,8 @@ parrot1 = MkParrot "Hi" 1
 
 parrot2 :: Animal
 parrot2 = MkParrot "Ciao" 2
+
+-- Tiere überfahren
+runOverAnimal :: Animal -> Animal
+runOverAnimal (MkDillo _ w) = MkDillo Dead w
+runOverAnimal (MkParrot _ w) = MkParrot "" w
