@@ -252,5 +252,5 @@ data Optional a =
 safeDivide :: Double -> Double -> Optional Double
 safeDivide x y =
     if y == 0
-        then ???
+        then Null
         else x / y
