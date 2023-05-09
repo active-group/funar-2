@@ -140,8 +140,8 @@ data Animal' =
 -- - Funktionen, die Funktionen zurückgeben
 -- - oder beides
 
-doSomething :: Config -> (Int -> String)
-doSomething config n = blabla n + timeout config
+-- doSomething :: Config -> (Int -> String)
+-- doSomething config n = blabla n + timeout config
 
-listMap (\x -> doSomething config x) [x1, x2, x3]
-listMap (doSomething config) [x1, x2, x3]
+-- listMap (\x -> doSomething config x) [x1, x2, x3]
+-- listMap (doSomething config) [x1, x2, x3]
