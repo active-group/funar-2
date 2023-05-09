@@ -190,3 +190,7 @@ untuplify f = \a b -> f (a, b)
 data ListOf element =
     Empty
   | Cons element (ListOf element)
+
+list1 :: ListOf Integer
+list1 = Cons 5 Empty
+-- ....
