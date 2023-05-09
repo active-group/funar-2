@@ -248,7 +248,11 @@ sieve (p : rest) =
 data Optional a =
     Result a
     | Null
+    deriving (Show)
 
+-- >>> safeDivide 3 5
+-- No instance for (Show (Optional Double))
+--   arising from a use of ‘evalPrint’
 safeDivide :: Double -> Double -> Optional Double
 safeDivide x y =
     if y == 0
