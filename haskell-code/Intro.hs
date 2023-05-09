@@ -271,3 +271,8 @@ class Eq a where
     -- Methoden
   (==) :: a -> a -> Bool
   (/=) :: a -> a -> Bool
+
+-- bisher:
+-- Eq: Gleicheit
+-- Show: 'Ausdrucken'
+-- Num: Zahlen bzw. numerische Operationen
