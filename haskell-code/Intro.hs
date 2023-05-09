@@ -251,8 +251,9 @@ data Optional a =
     deriving (Show)
 
 -- >>> safeDivide 3 5
--- No instance for (Show (Optional Double))
---   arising from a use of ‘evalPrint’
+-- Result 0.6
+-- >>> safeDivide 3 0
+-- Null
 safeDivide :: Double -> Double -> Optional Double
 safeDivide x y =
     if y == 0
