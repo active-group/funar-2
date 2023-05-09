@@ -159,5 +159,6 @@ tupelFun :: (Int, Int) -> Int
 -- tupelFun (n, m) = n + m + 3
 tupelFun t = fst t + snd t + 3
 
+--          v  Typvariable (%a in Racket)
 tuplify :: (a -> b -> c) -> ((a, b) -> c)
 tuplify = undefined
