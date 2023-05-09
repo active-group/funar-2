@@ -184,3 +184,9 @@ untuplify f = \a b -> f (a, b)
 --    - Funktion anpassen
 
 -- https://teams.microsoft.com/l/meetup-join/19%3ameeting_ODgxOGExN2YtZjAwYy00MTliLWEyNjktZjJjMWY5NGM2NjE4%40thread.v2/0?context=%7b%22Tid%22%3a%2282bddc65-9759-44b2-af74-ec76b2e6812a%22%2c%22Oid%22%3a%22526ccabf-c09c-4f80-90f3-fb7a4f809318%22%7d
+
+-- Listen
+
+data ListOf element =
+    Empty
+  | Cons element (ListOf element)
