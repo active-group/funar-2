@@ -265,3 +265,9 @@ doSomething x =
     case 3 `safeDivide` x of
         Null -> 7
         Result res -> if res > 2 then 5 else 7
+
+-- Typklassen
+class Eq a where
+    -- Methoden
+  (==) :: a -> a -> Bool
+  (/=) :: a -> a -> Bool
