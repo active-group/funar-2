@@ -207,3 +207,7 @@ list2 = 1 : 2 : []
 
 list3 :: [Integer]
 list3 = [1,2,3]
+
+listSum :: [Integer] -> Integer
+listSum [] = 0 -- neutrales Element
+listSum (n : rest) = n + listSum rest
