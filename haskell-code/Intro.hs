@@ -161,6 +161,7 @@ tupelFun t = fst t + snd t + 3
 
 --          v  Typvariable (%a in Racket)
 tuplify :: (a -> b -> c) -> ((a, b) -> c)
-tuplify    f              = \(a, b) -> (f a) b
+-- tuplify    f              = \(a, b) -> (f a) b
+tuplify = \f -> (\(a, b) -> f a b)
 
 -- (tuplify (+)) (2, 3)
