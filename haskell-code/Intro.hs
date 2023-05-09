@@ -170,3 +170,15 @@ untuplify :: ((a, b) -> c) -> (a -> b -> c)
 untuplify f = \a b -> f (a, b)
 
 -- curry / uncurry eingebaut
+
+-- Duschprodukte
+-- - Seife (hat pH-Wert)
+-- - Shampoo (ist geeignet für Haartyp)
+-- - Duschgel (50% Seife, 50% Shampoo)
+
+-- 1) Datenanalyse + Datentyp (s. Animal)
+-- 2) Funktion, die den Seifenanteil berechnet
+
+-- 3) Erweiterung des Datentyps:
+--    - Mixtur aus zwei Duschprodukten, bel. Anteile
+--    - Funktion anpassen
