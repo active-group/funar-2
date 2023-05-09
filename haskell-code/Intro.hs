@@ -1,4 +1,5 @@
 module Intro where
+import qualified Data.Sequence.Internal.Sorting as Arg
 
 -- Signatur
 x :: Integer
@@ -130,3 +131,6 @@ data Animal' =
 -- runOverAnimal' (DilloA dillo) = runOverDillo dillo
 -- runOverAnimal' (ParrotA parrot) = runOverParrot parrot
 
+-- Currying: Haskell ist implizit gecurryt
+-- mehrstellige Funktionen sind eigentlich einstellig,
+-- liefern aber Funktionen zurück, die die restlichen Arg. nehmen
