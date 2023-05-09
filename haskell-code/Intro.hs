@@ -236,3 +236,11 @@ natsFrom n = n : natsFrom (n + 1)
 strikeMultiples :: Integer -> [Integer] -> [Integer]
 strikeMultiples n list =
     filter (\m -> mod m n /= 0) list
+-- >>> strikeMultiples 2 [1 .. 10]
+-- [1,3,5,7,9]
+
+-- Primzahlsieb
+sieve :: [Integer] -> [Integer]
+sieve [] = []
+sieve (p : rest) =
+    p : strikeMultiples p rest
