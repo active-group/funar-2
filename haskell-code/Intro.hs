@@ -212,6 +212,6 @@ listSum :: [Integer] -> Integer
 listSum [] = 0 -- neutrales Element
 listSum (n : rest) = n + listSum rest
 
-listFold neutral op [] = n
+listFold neutral op [] = neutral
 listFold neutral op (x : xs) =
     op x (listFold neutral op xs)
