@@ -145,3 +145,6 @@ data Animal' =
 
 -- listMap (\x -> doSomething config x) [x1, x2, x3]
 -- listMap (doSomething config) [x1, x2, x3]
+
+
+-- BBB: https://bbb.active-group.de/b/joh-nn2-wlw-wp2
