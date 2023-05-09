@@ -267,12 +267,20 @@ doSomething x =
         Result res -> if res > 2 then 5 else 7
 
 -- Typklassen
-class Eq a where
-    -- Methoden
-  (==) :: a -> a -> Bool
-  (/=) :: a -> a -> Bool
+-- class Eq a where
+--     -- Methoden
+--   (==) :: a -> a -> Bool
+--   (/=) :: a -> a -> Bool
 
 -- bisher:
 -- Eq: Gleicheit
 -- Show: 'Ausdrucken'
 -- Num: Zahlen bzw. numerische Operationen
+-- class Num a where
+--   (+) :: a -> a -> a
+--   (-) :: a -> a -> a
+--   (*) :: a -> a -> a
+--   negate :: a -> a
+--   abs :: a -> a
+--   signum :: a -> a
+--   fromInteger :: Integer -> a
