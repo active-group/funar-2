@@ -244,3 +244,7 @@ sieve :: [Integer] -> [Integer]
 sieve [] = []
 sieve (p : rest) =
     p : sieve (strikeMultiples p rest)
+
+
+safeDivide :: Double -> Double -> Double
+safeDivide x y = x / y
