@@ -148,3 +148,9 @@ data Animal' =
 
 
 -- BBB: https://bbb.active-group.de/b/joh-nn2-wlw-wp2
+
+-- Currying
+
+-- Tupel
+tup :: (String, Integer, Integer -> Integer)
+tup = ("abc", 17, \n -> n - 3)
