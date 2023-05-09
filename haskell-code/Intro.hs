@@ -204,3 +204,6 @@ list1' = 5 : []  -- 5 cons leere Liste
 
 list2 :: [Integer]
 list2 = 1 : 2 : []
+
+list3 :: [Integer]
+list3 = [1,2,3]
