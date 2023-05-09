@@ -168,3 +168,5 @@ tuplify = \f -> (\(a, b) -> f a b)
 
 untuplify :: ((a, b) -> c) -> (a -> b -> c)
 untuplify f = \a b -> f (a, b)
+
+-- curry / uncurry eingebaut
