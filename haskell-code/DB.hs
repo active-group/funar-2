@@ -61,5 +61,6 @@ p1 =
 -- 2) Schreibe einen Wert und sei fertig
 -- 2) Lese einen Wert und sei fertig
 
+-- primitive Hilfsfunktion / Hilfsprogramm
 put :: Key -> Int -> DB ()
 put key val = Put key val (\() -> Return ()) -- brauche: DB ()
