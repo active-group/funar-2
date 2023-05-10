@@ -78,3 +78,4 @@ step1 = put "Johannes" 36
 
 step2 :: DB Int
 step2 = get "Johannes"
+
