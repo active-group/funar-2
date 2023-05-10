@@ -56,7 +56,7 @@ data Game a =
 
 instance Monad Game where
     -- (>>=) :: Game a -> (a -> Game b) -> Game b
-    (>>=) = undefined
+    (>>=) (Done a) next = next a
     return = Done
 
 -- Ergebnis: der Ablauf, der passiert, wenn das Command behandelt wird
