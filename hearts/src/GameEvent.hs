@@ -59,7 +59,7 @@ instance Monad Game where
     (>>=) (Done a) next = next a
     return = Done
 
-isCardValidM :: Game _
+isCardValidM :: Game Bool
 isCardValidM = undefined
 
 -- Ergebnis: der Ablauf, der passiert, wenn das Command behandelt wird
