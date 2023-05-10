@@ -31,3 +31,8 @@ data Card = Card { suit :: Suit, rank :: Rank }
 -- Liste aller Karten
 allCards :: [Card]
 allCards = [Card suit rank | suit <- allSuits, rank <- allRanks]
+
+cardBeats :: Card -> Card -> Bool
+cardBeats first second =
+    suit first == suit second
+    && rank first > rank second
