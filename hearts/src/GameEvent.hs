@@ -53,3 +53,6 @@ data GameEvent
 -- Ein Hearts-Programm mit Ergebnis a
 data Game a =
     Done a
+
+-- Ergebnis: der Ablauf, der passiert, wenn das Command behandelt wird
+tableProcessCommand :: GameCommand -> Game (Maybe Player)
