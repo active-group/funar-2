@@ -30,4 +30,4 @@ data Card = Card { suit :: Suit, rank :: Rank }
 
 -- Liste aller Karten
 allCards :: [Card]
-allCards = []
+allCards = [Card suit rank | suit <- allSuits, rank <- allRanks]
