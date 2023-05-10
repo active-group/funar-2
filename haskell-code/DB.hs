@@ -3,6 +3,7 @@ module DB where
 {-
 
 Wollen: Key-Value-Store verwenden
+Key = String, Value = Int
 
 Würde gerne schreiben: "Datenbankprogramm"
 
@@ -14,3 +15,13 @@ Würde gerne schreiben: "Datenbankprogramm"
 
 -}
 
+-- Liste von Kommandos?
+
+type Key = String
+
+-- data Animal = MkParrot Sentence Weight | MkDillo Liveness Weight
+-- Datenbankkommando
+data DBCommand =
+    Put Key Int
+    | Get Key
+    | Return String
