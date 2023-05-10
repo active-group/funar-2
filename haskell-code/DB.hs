@@ -129,6 +129,7 @@ instance MyFunctor Optional where
     -- map' :: (a -> b) -> Optional a -> Optional b
     map' f Null = Null
     map' f (Result x) = Result (f x)
+    -- heißt eigentlich:  fmap
 
 instance Functor DB where
 instance Applicative DB where
