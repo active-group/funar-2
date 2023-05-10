@@ -54,5 +54,11 @@ data GameEvent
 data Game a =
     Done a
 
+instance Monad Game where
+    (>>=) = undefined
+    return = Done
+
 -- Ergebnis: der Ablauf, der passiert, wenn das Command behandelt wird
 tableProcessCommand :: GameCommand -> Game (Maybe Player)
+tableProcessCommand (DealHands hands) = undefined
+tableProcessCommand (PlayCard player card) = do
