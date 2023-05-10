@@ -365,3 +365,5 @@ instance Semigroup a => Semigroup (Optional a) where
 -- Bonus:
 instance ??? => Monoid (Optional a) where
     -- neutral :: Optional a
+    neutral = Result ???
+    neutral = Null
