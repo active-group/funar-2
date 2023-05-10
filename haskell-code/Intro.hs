@@ -358,7 +358,11 @@ instance (Monoid a, Monoid b) => Monoid (a, b) where
 
 -- Aufgabe:
 instance Semigroup a => Semigroup (Optional a) where
-    op :: Optional a -> Optional a -> Optional a
+    -- op :: Optional a -> Optional a -> Optional a
+    op Null (Result a) = undefined
+    op (Result a) Null = undefined
+    op Null Null = undefined
+    op (Result a1) (Result a2) = undefined
 
 -- Bonus:
 instance ??? => Monoid (Optional a) where
