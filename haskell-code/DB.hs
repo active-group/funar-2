@@ -36,8 +36,11 @@ type Key = String
 
 -- Idee: Abläufe als modellierter Wert!
 
+
 -- Beschreibung eines Datenbankprogramms mit Ergebnistyp a
 data DB a =
-    Get Key
+    -- Callback
+    -- Get "Johannes" (\value -> ...)
+    Get Key (Int -> )
   | Put Key Int
   | Return a
