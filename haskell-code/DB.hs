@@ -79,3 +79,9 @@ step1 = put "Johannes" 36
 step2 :: DB Int
 step2 = get "Johannes"
 
+-- Seil-Analogie:  jedes Programm "ist ein Seil"
+-- jedes Seil hat ein Ende
+-- am Ende steht immer "Return"
+
+-- Programme zusammenspleißt
+splice :: DB a -> DB b -> DB b
