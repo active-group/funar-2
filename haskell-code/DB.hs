@@ -174,6 +174,9 @@ runDBAsInMemory mp (Return result) =
 -- FP:  wir injizieren keine alternativen Implementierungen für DBs,
 -- wir nutzen stattdessen andere Interpreter-Funktionen
 
+-- benötigen Datentyp für "eine Zeile"
+data Entry = MkEntry Key Int
+
 runDBAsSqlite :: Connection -> DB a -> IO a
 runDBAsSqlite conn (Get key callback) =
     let value = ???
