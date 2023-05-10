@@ -10,6 +10,8 @@ Würde gerne schreiben: "Datenbankprogramm"
   put "Johannes" 36
   x = get "Johannes"
   put "Johannes" (x + 1)
+  return ()
+
   y = get "Johannes"
   return (show (x + y))
 
@@ -87,7 +89,9 @@ step2 = get "Johannes"
 --                   v    hat keinen Zugriff auf des Erg. des ersten Ablaufs
 -- splice :: DB a -> DB b -> DB b
 splice :: DB a -> (a -> DB b) -> DB b
-splice (Get key callback) next = undefined
-splice (Put key value callback) next = undefined
+splice (Get key callback) next =
+    Get key (\value -> splice (callback value) next)
+splice (Put key value callback) next =
+    Put key value (\() -> splice (callback ()) next)
 -- Das Ende des Seils -> hier wird gearbeitet
 splice (Return result) next = next result
