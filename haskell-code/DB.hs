@@ -40,6 +40,8 @@ type Key = String
 -- Beschreibung eines Datenbankprogramms mit Ergebnistyp a
 data DB a =
     -- Callback
+    -- Wer das "Get" schreibt, definiert den Callback und damit
+    -- die Fortsetzung der Logik
     -- Get "Johannes" (\value -> ...)
     Get Key (Int -> )
   | Put Key Int
