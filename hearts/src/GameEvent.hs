@@ -59,6 +59,9 @@ instance Monad Game where
     (>>=) (Done a) next = next a
     return = Done
 
+isCardValidM :: Game _
+isCardValidM = undefined
+
 -- Ergebnis: der Ablauf, der passiert, wenn das Command behandelt wird
 tableProcessCommand :: GameCommand -> Game (Maybe Player)
 tableProcessCommand (DealHands hands) = undefined
