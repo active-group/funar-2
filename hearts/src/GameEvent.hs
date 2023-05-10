@@ -52,7 +52,8 @@ data GameEvent
 -- Wollen Spielablauf modellieren!
 -- Ein Hearts-Programm mit Ergebnis a
 data Game a =
-    Done a
+    IsCardValid Player Card (Bool -> Game a)
+    | Done a
 
 instance Monad Game where
     -- (>>=) :: Game a -> (a -> Game b) -> Game b
