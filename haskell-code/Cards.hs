@@ -38,3 +38,6 @@ cardBeats first second =
     && rank first > rank second
 
 type Hand = Set Card
+
+emptyHand :: Hand
+emptyHand = Set.empty
