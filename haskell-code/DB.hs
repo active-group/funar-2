@@ -106,9 +106,9 @@ p1' =
 p1'' :: DB String
 p1'' = do -- do-Notation
     put "Johannes" 36   -- "monadischer Wert"
-    x <- get "Johannes"
+    x <- step2
     put "Johannes" (x+1)
-    y <- get "Johannes"
+    y <- step2
     Prelude.return (show (x + y))
 
 --          > m "fehlt noch ein Argument"
