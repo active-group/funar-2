@@ -362,7 +362,7 @@ instance Semigroup a => Semigroup (Optional a) where
     op Null (Result a) = Result a
     op (Result a) Null = Result a
     op Null Null = Null
-    op (Result a1) (Result a2) = Result a1
+    op (Result a1) (Result a2) = Result (a1 `op` a2)
 
 -- Bonus:
 instance ??? => Monoid (Optional a) where
