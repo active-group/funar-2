@@ -25,3 +25,5 @@ data DBCommand a =
     Put Key Int
     | Get Key
     | Return a
+
+type DBProgram a = [DBCommand a]
