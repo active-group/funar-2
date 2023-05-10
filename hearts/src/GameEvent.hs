@@ -26,7 +26,7 @@ import Data.Map (Map)
 -- Was passiert bei Hearts?
 data GameEvent
     = GameEnded Player -- Gewinner
-    | GameStarted Player
+    | GameStarted Player -- optional, weil Kreuz 2 beginnt
     -- | CardsShuffled
     | CardsDistributed Player Hand
     | CardPlayed Player Card
