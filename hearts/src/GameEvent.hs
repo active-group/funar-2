@@ -55,6 +55,7 @@ data Game a =
     Done a
 
 instance Monad Game where
+    -- (>>=) :: Game a -> (a -> Game b) -> Game b
     (>>=) = undefined
     return = Done
 
