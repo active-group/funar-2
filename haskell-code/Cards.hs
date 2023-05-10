@@ -8,3 +8,9 @@ module Cards where
 
 data Suit = Clubs | Spades | Hearts | Diamonds
     deriving (Eq, Show)
+
+data Rank =
+    One | Two | Three | Four | Five | Six | Seven
+    | Eight | Nine | Ten | Jack | Queen | King
+    | Ace
+    deriving (Eq, Show)
