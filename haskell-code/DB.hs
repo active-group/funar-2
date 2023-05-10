@@ -21,7 +21,7 @@ type Key = String
 
 -- data Animal = MkParrot Sentence Weight | MkDillo Liveness Weight
 -- Datenbankkommando
-data DBCommand =
+data DBCommand a =
     Put Key Int
     | Get Key
-    | Return String
+    | Return a
