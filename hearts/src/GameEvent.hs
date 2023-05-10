@@ -75,4 +75,4 @@ tableProcessCommand (PlayCard player card) = do
     isCardValid <- isCardValidM player card
     if isCardValid
         then undefined
-        else undefined
+        else recordEventM (IllegalCardAttempted player card)
