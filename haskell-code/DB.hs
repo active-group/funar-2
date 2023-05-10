@@ -47,3 +47,11 @@ data DB a =
     -- Fortsetzung == Callback
   | Put Key Int (() -> DB a)  -- () heißt Unit (denkt: void)
   | Return a
+
+p1 :: DB String
+p1 =
+    Put "Johannes" 36 (\() ->
+        Get "Johannes" (\x ->
+            Put "Johannes" (x + 1) (\() ->
+                Get "Johannes" (\y ->
+                    Return (show (x + y))))))
