@@ -117,6 +117,9 @@ class MyMonad m where
     -- splice :: DB a -> (a -> DB b) -> DB b
     (>>=) ::     m  a -> (a -> m  b) -> m  b
 
+instance Functor DB where
+instance Applicative DB where
+
 --             v   _nicht_ DB a
 instance Monad DB where
     (>>=) = splice
