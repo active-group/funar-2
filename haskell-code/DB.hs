@@ -4,7 +4,7 @@ module DB where
 
 Wollen: Key-Value-Store verwenden
 
-Würde gerne schreiben:
+Würde gerne schreiben: "Datenbankprogramm"
 
   put "Johannes" 36
   x = get "Johannes"
@@ -12,5 +12,5 @@ Würde gerne schreiben:
   y = get "Johannes"
   return (show (x + y))
 
-
 -}
+
