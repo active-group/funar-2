@@ -22,8 +22,8 @@ data Rank =
 
 allRanks :: [Rank]
 allRanks = [minBound .. maxBound]
--- >>> allSuits
--- [Clubs,Spades,Hearts,Diamonds]
+-- >>> allRanks
+-- [One,Two,Three,Four,Five,Six,Seven,Eight,Nine,Ten,Jack,Queen,King,Ace]
 
 data Card = Card { suit :: Suit, rank :: Rank }
     deriving (Eq, Show)
