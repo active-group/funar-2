@@ -1,3 +1,4 @@
+{-# LANGUAGE InstanceSigs #-}
 module DB where
 
 import qualified Data.Map as Map -- alle Funktionen benutzen mit Map.
@@ -142,6 +143,7 @@ instance Applicative DB where
 --             v   _nicht_ DB a
 instance Monad DB where
     (>>=) = splice
+    -- return :: a -> DB a
     return = Return
 
 -- Alter erhöhen      v    ich bin "in der Monade"
