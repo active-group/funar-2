@@ -43,6 +43,7 @@ data DB a =
     -- Wer das "Get" schreibt, definiert den Callback und damit
     -- die Fortsetzung der Logik
     -- Get "Johannes" (\x -> ... -- Restablauf)
-    Get Key (Int -> DB a)
-  | Put Key Int
+    Get Key (Int -> DB a) -- Selbstbezug!
+    -- Fortsetzung == Callback
+  | Put Key Int (() -> DB a)
   | Return a
