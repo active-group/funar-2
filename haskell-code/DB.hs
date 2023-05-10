@@ -1,4 +1,5 @@
 {-# LANGUAGE InstanceSigs #-}
+{-# LANGUAGE OverloadedStrings #-}
 module DB where
 
 import qualified Data.Map as Map -- alle Funktionen benutzen mit Map.
@@ -188,7 +189,7 @@ instance ToRow Entry where
 runDBAsSqlite :: Connection -> DB a -> IO a
 runDBAsSqlite conn (Get key callback) = do
     let sql = "select key, value from entries where key = :key"
-    queryNamed conn sql [":key" := key]
-    in runDBAsSqlite conn (callback value)
+    [entry] <- queryNamed conn sql [":key" := key]
+    runDBAsSqlite conn (callback value)
 runDBAsSqlite conn (Put key value callback) = undefined
 runDBAsSqlite _ (Return result) = return result -- pure result
