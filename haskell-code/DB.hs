@@ -68,5 +68,6 @@ put key val = Put key val (\() -> Return ()) -- brauche: DB ()
 get :: Key -> DB Int
 get key = Get key (\result -> Return result) 
 
+-- Programm, das nichts tut und gleich terminiert mit dem geg. Wert
 return :: a -> DB a
 return a = Return a
