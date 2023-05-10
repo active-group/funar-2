@@ -128,7 +128,7 @@ data Optional a = Result a | Null
 instance MyFunctor Optional where
     -- map' :: (a -> b) -> Optional a -> Optional b
     map' f Null = Null
-    map' f (Result x) = f x
+    map' f (Result x) = Result (f x)
 
 instance Functor DB where
 instance Applicative DB where
