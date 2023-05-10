@@ -14,3 +14,6 @@ data Rank =
     | Eight | Nine | Ten | Jack | Queen | King
     | Ace
     deriving (Eq, Show)
+
+data Card = Card { suit :: Suit, rank :: Rank }
+    deriving (Eq, Show)
