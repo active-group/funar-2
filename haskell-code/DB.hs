@@ -138,3 +138,11 @@ instance Applicative DB where
 --             v   _nicht_ DB a
 instance Monad DB where
     (>>=) = splice
+
+-- Alter erhöhen      v    ich bin "in der Monade"
+increaseAge :: Key -> DB Int
+increaseAge key = do
+    age <- get key
+    let newAge = age + 1
+    put key newAge
+    return newAge
