@@ -159,6 +159,6 @@ runDBAsInMemory mp (Get key callback) =
      in runDBAsInMemory mp (callback value)
 runDBAsInMemory mp (Put key value callback) =
     let newMp = Map.insert key value mp
-    in runDBAsInMemory ??? (callback ())
+    in runDBAsInMemory newMp (callback ())
 runDBAsInMemory _ (Return result) =
     result
