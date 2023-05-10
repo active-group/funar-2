@@ -10,7 +10,7 @@ data Suit = Clubs | Spades | Hearts | Diamonds
     deriving (Eq, Show, Enum, Bounded)
 
 allSuits :: [Suit]
-allSuits = [Cl]
+allSuits = [minBound .. maxBound]
 
 data Rank =
     One | Two | Three | Four | Five | Six | Seven
