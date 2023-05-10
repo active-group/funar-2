@@ -359,8 +359,8 @@ instance (Monoid a, Monoid b) => Monoid (a, b) where
 -- Aufgabe:
 instance Semigroup a => Semigroup (Optional a) where
     -- op :: Optional a -> Optional a -> Optional a
-    op Null (Result a) = Result a
-    op (Result a) Null = Result a
+    op Null (Result a) = Result a -- Null
+    op (Result a) Null = Result a -- Null
     op Null Null = Null
     op (Result a1) (Result a2) = Result (a1 `op` a2)
 
