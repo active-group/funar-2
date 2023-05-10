@@ -109,3 +109,8 @@ p1'' = do -- do-Notation
     put "Johannes" (x+1)
     y <- get "Johannes"
     Prelude.return (show (x + y))
+
+class Monad m where
+    -- "bind"
+    -- splice :: DB a -> (a -> DB b) -> DB b
+    (>>=) ::     m  a -> (a -> m  b) -> m  b
