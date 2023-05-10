@@ -314,7 +314,7 @@ list1 `concat` [] = [] `concat` list1 = list1
 
 -- "a erfüllt das Interface Semigroup"
 class Semigroup a where
-    -- Methoden
+    -- Methoden "Kombinator"
     op :: a -> a -> a
     -- fordern noch: assoziativ
 
