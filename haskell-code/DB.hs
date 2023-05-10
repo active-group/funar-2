@@ -4,6 +4,10 @@ module DB where
 import qualified Data.Map as Map -- alle Funktionen benutzen mit Map.
 import Data.Map (Map, (!))
 
+import Control.Applicative
+import Database.SQLite.Simple
+import Database.SQLite.Simple.FromRow
+
 {-
 
 Wollen: Key-Value-Store verwenden
@@ -171,6 +175,8 @@ runDBAsInMemory mp (Return result) =
 -- wir nutzen stattdessen andere Interpreter-Funktionen
 
 runDBAsSqlite :: Connection -> DB a -> IO a
-runDBAsSqlite conn (Get key callback) = undefined
+runDBAsSqlite conn (Get key callback) =
+    let value = ???
+    in runDBAsSqlite conn (callback value)
 runDBAsSqlite conn (Put key value callback) = undefined
 runDBAsSqlite _ (Return result) = return result -- pure result
