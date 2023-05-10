@@ -56,3 +56,7 @@ p1 =
                 Get "Johannes" (\y ->
                     Return (show (x + y))))))
 
+-- Einfache Datenbankprogramme:
+-- 1) Gib einen festen Wert zurück (ohne in die DB zu schauen)
+-- 2) Schreibe einen Wert und sei fertig
+-- 2) Lese einen Wert und sei fertig
