@@ -173,4 +173,4 @@ runDBAsInMemory mp (Return result) =
 runDBAsSqlite :: Connection -> DB a -> IO a
 runDBAsSqlite conn (Get key callback) = undefined
 runDBAsSqlite conn (Put key value callback) = undefined
-runDBAsSqlite _ (Return result) = return result
+runDBAsSqlite _ (Return result) = return result -- pure result
