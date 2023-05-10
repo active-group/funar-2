@@ -110,7 +110,9 @@ p1'' = do -- do-Notation
     y <- get "Johannes"
     Prelude.return (show (x + y))
 
+--          > m "fehlt noch ein Argument"
 class Monad m where
     -- "bind"
+    --           v  Typkonstruktor
     -- splice :: DB a -> (a -> DB b) -> DB b
     (>>=) ::     m  a -> (a -> m  b) -> m  b
