@@ -331,3 +331,6 @@ class Semigroup t => Monoid t where
 
 instance Monoid [a] where
     neutral = []
+
+instance Semigroup (a, b) where
+    op :: (a, b) -> (a, b) -> (a, b)
