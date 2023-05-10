@@ -10,8 +10,6 @@ Würde gerne schreiben: "Datenbankprogramm"
   put "Johannes" 36
   x = get "Johannes"
   put "Johannes" (x + 1)
-  return ()
-
   y = get "Johannes"
   return (show (x + y))
 
