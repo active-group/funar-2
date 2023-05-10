@@ -36,3 +36,5 @@ cardBeats :: Card -> Card -> Bool
 cardBeats first second =
     suit first == suit second
     && rank first > rank second
+
+type Hand = Set Card
