@@ -102,10 +102,10 @@ p1' =
     splice (get "Johannes") (\y ->
     Return (show (x+y))))))
 
-p1'' = DB String
+p1'' :: DB String
 p1'' = do -- do-Notation
     put "Johannes" 36
     x <- get "Johannes"
     put "Johannes" (x+1)
     y <- get "Johannes"
-    return (show (x + y))
+    Prelude.return (show (x + y))
