@@ -191,5 +191,7 @@ runDBAsSqlite conn (Get key callback) = do
     let sql = "select key, value from entries where key = :key"
     [MkEntry _ value] <- queryNamed conn sql [":key" := key]
     runDBAsSqlite conn (callback value)
-runDBAsSqlite conn (Put key value callback) = undefined
+runDBAsSqlite conn (Put key value callback) = do
+    execute conn "replace into entries (key, value) values (?, ?)" (MkEntry key value)
+    runDBAsSqlite conn (callback ())
 runDBAsSqlite _ (Return result) = return result -- pure result
