@@ -314,7 +314,7 @@ list1 `concat` [] = [] `concat` list1 = list1
 
 -- "a erfüllt das Interface Semigroup"
 class Semigroup a where
-    -- Methoden "Kombinator"
+    -- Methoden "Kombinator"   (G x G -> G)
     op :: a -> a -> a
     -- fordern noch: assoziativ
 
@@ -326,4 +326,5 @@ instance Semigroup [a] where
 -- funktioniert schon für String: :info String!
 
 class Semigroup t => Monoid t where
+    -- Gesetz:   neutral `op` x == x == x `op` neutral
     neutral :: t
