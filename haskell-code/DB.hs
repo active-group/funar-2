@@ -156,7 +156,7 @@ increaseAge key = do
 
 -- Datenbankprogramm ausführen (in-memory)
 -- "dependency injection"
-runDBAsInMemory :: Map Key Int -> DB a -> a
+runDBAsInMemory :: Map Key Int -> DB a -> (Map Key Int, a)
 runDBAsInMemory mp (Get key callback) =
     let value = mp ! key
      in runDBAsInMemory mp (callback value)
