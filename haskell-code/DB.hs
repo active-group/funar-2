@@ -60,3 +60,6 @@ p1 =
 -- 1) Gib einen festen Wert zurück (ohne in die DB zu schauen)
 -- 2) Schreibe einen Wert und sei fertig
 -- 2) Lese einen Wert und sei fertig
+
+put :: Key -> Int -> DB ()
+put key val = Put key val (\() -> Return ()) -- brauche: DB ()
