@@ -116,3 +116,7 @@ class Monad m where
     --           v  Typkonstruktor
     -- splice :: DB a -> (a -> DB b) -> DB b
     (>>=) ::     m  a -> (a -> m  b) -> m  b
+
+--             v   _nicht_ DB a
+instance Monad DB where
+    (>>=) = splice
