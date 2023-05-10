@@ -84,4 +84,9 @@ step2 = get "Johannes"
 -- am Ende steht immer "Return"
 
 -- Programme zusammenspleißt
-splice :: DB a -> DB b -> DB b
+--                   v    hat keinen Zugriff auf des Erg. des ersten Ablaufs
+-- splice :: DB a -> DB b -> DB b
+splice :: DB a -> (a -> DB b) -> DB b
+splice (Get key callback) next = undefined
+splice (Put key value callback) next = undefined
+splice (Return result) next = undefined
