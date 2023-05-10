@@ -163,8 +163,8 @@ runDBAsInMemory mp (Get key callback) =
 runDBAsInMemory mp (Put key value callback) =
     let newMp = Map.insert key value mp
     in runDBAsInMemory newMp (callback ())
-runDBAsInMemory _ (Return result) =
-    result
+runDBAsInMemory mp (Return result) =
+    (mp, result)
 
 -- ^ nützlich für Unit-Tests
 -- FP:  wir injizieren keine alternativen Implementierungen für DBs,
