@@ -365,6 +365,7 @@ instance Semigroup a => Semigroup (Optional a) where
     op (Result a1) (Result a2) = Result (a1 `op` a2)
 
 -- Bonus:
+-- Optional macht aus Halbgruppen Monoide!
 instance Semigroup a => Monoid (Optional a) where
     -- neutral :: Optional a
     -- op neutral x == x
