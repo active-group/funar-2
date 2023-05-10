@@ -11,6 +11,8 @@ data Suit = Clubs | Spades | Hearts | Diamonds
 
 allSuits :: [Suit]
 allSuits = [minBound .. maxBound]
+-- >>> allSuits
+-- [Clubs,Spades,Hearts,Diamonds]
 
 data Rank =
     One | Two | Three | Four | Five | Six | Seven
