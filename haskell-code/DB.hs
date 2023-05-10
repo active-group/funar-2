@@ -192,7 +192,7 @@ runDBAsSqlite conn (Get key callback) = do
     [MkEntry _ value] <- queryNamed conn sql [":key" := key]
     runDBAsSqlite conn (callback value)
 runDBAsSqlite conn (Put key value callback) = do
-    execute_ conn "replace into entries (key, value) values (?, ?)" (MkEntry key value)
+    execute conn "replace into entries (key, value) values (?, ?)" (MkEntry key value)
     runDBAsSqlite conn (callback ())
 runDBAsSqlite _ (Return result) = return result -- pure result
 
