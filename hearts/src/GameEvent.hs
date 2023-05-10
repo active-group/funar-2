@@ -63,3 +63,7 @@ instance Monad Game where
 tableProcessCommand :: GameCommand -> Game (Maybe Player)
 tableProcessCommand (DealHands hands) = undefined
 tableProcessCommand (PlayCard player card) = do
+    isCardValid <- isCardValidM player card
+    if isCardValid
+        then undefined
+        else undefined
