@@ -7,7 +7,10 @@ module Cards where
 -- - Wert (Rank)
 
 data Suit = Clubs | Spades | Hearts | Diamonds
-    deriving (Eq, Show)
+    deriving (Eq, Show, Enum, Bounded)
+
+allSuits :: [Suit]
+allSuits = [Cl]
 
 data Rank =
     One | Two | Three | Four | Five | Six | Seven
@@ -17,3 +20,7 @@ data Rank =
 
 data Card = Card { suit :: Suit, rank :: Rank }
     deriving (Eq, Show)
+
+-- Liste aller Karten
+allCards :: [Card]
+allCards = []
