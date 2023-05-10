@@ -189,7 +189,7 @@ instance ToRow Entry where
 runDBAsSqlite :: Connection -> DB a -> IO a
 runDBAsSqlite conn (Get key callback) = do
     let sql = "select key, value from entries where key = :key"
-    [entry] <- queryNamed conn sql [":key" := key]
+    [MkEntry _ value] <- queryNamed conn sql [":key" := key]
     runDBAsSqlite conn (callback value)
 runDBAsSqlite conn (Put key value callback) = undefined
 runDBAsSqlite _ (Return result) = return result -- pure result
