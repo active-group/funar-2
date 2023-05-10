@@ -325,6 +325,7 @@ instance Semigroup [a] where
 
 -- funktioniert schon für String: :info String!
 
+-- Monoid als "Interface" "erbt" von Semigroup
 class Semigroup t => Monoid t where
     -- Gesetz:   neutral `op` x == x == x `op` neutral
     neutral :: t
