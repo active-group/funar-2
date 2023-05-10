@@ -358,9 +358,7 @@ instance (Monoid a, Monoid b) => Monoid (a, b) where
 
 -- Aufgabe:
 instance Semigroup a => Semigroup (Optional a) where
-    -- op :: Optional a -> Optional a -> Optional a
-    -- op a b = ...
-    -- op a b = ...
+    op :: Optional a -> Optional a -> Optional a
 
 -- Bonus:
 instance ??? => Monoid (Optional a) where
