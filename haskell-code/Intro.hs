@@ -356,4 +356,12 @@ instance (Monoid a, Monoid b) => Monoid (a, b) where
 -- Stattdessen:
 -- if True then myString `op` someOtherString else neutral
 
+-- Aufgabe:
 instance Semigroup a => Semigroup (Optional a) where
+    -- op :: Optional a -> Optional a -> Optional a
+    -- op a b = ...
+    -- op a b = ...
+
+-- Bonus:
+instance ??? => Monoid (Optional a) where
+    -- neutral :: Optional a
