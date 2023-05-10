@@ -117,6 +117,7 @@ class Applicative m => MyMonad m where
     -- splice :: DB a -> (a -> DB b) -> DB b
     (>>=) ::     m  a -> (a -> m  b) -> m  b
 
+-- Dinge, über die ich "mappen" kann
 class MyFunctor m where
     -- map :: (a -> b) -> [a] -> [b]
     -- map :: (a -> b) -> List a -> List b
