@@ -169,3 +169,5 @@ runDBAsInMemory mp (Return result) =
 -- ^ nützlich für Unit-Tests
 -- FP:  wir injizieren keine alternativen Implementierungen für DBs,
 -- wir nutzen stattdessen andere Interpreter-Funktionen
+
+runDBAsSqlite :: Connection -> DB a -> IO a
