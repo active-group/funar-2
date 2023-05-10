@@ -342,5 +342,16 @@ instance (Semigroup a, Semigroup b) => Semigroup (a, b) where
 instance (Monoid a, Monoid b) => Monoid (a, b) where
     -- neutral :: (a, b)
     -- (a,b) `op` neutral == (a,b)
-    -- (a,b) `op` (x, y) == (a,b)
+    -- (a,b) `op` (x, y) == (op a x, op b y) == (a,b)
     neutral = (neutral, neutral)
+
+-- Stringtypen:
+-- String, Text, LazyText, ByteString, LazyByteString
+
+-- Mit String konkret:
+-- if True then myString ++ someOtherString else ""
+-- Ich möchte Text verwenden:
+-- if True then Text.concat myString someOtherString else Text.empty
+
+-- Stattdessen:
+-- if True then myString `op` someOtherString else neutral
