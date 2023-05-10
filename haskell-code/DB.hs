@@ -67,3 +67,6 @@ put key val = Put key val (\() -> Return ()) -- brauche: DB ()
 
 get :: Key -> DB Int
 get key = Get key (\result -> Return result) 
+
+return :: a -> DB a
+return a = Return a
