@@ -195,3 +195,11 @@ runDBAsSqlite conn (Put key value callback) = do
     execute conn "replace into entries (key, value) values (?, ?)" (MkEntry key value)
     runDBAsSqlite conn (callback ())
 runDBAsSqlite _ (Return result) = return result -- pure result
+
+execDB :: DB a -> IO a
+execDB db = do
+    conn <- open "test.db"
+    execute_ conn "create table if not exists entries (key text primary key, value integer)"
+    result <- runDBAsSqlite conn db
+    close conn
+    return result
