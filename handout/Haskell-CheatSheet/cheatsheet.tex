@@ -1,0 +1,203 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{ngerman}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper, left=15mm, right=15mm, top=15mm, bottom=15mm]{geometry}
+
+% TODO Abstand im Header erhöhen
+
+\usepackage{fancyheadings}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds,mindmap}
+
+\usepackage{eso-pic}
+\makeatletter
+\AddToShipoutPicture{%
+\begin{tikzpicture}%
+% put: x (from left) , y (from bottom)
+% \put(510,770){\includegraphics[width=2.5cm]{../../logos/German.png}}%
+\end{tikzpicture}%
+}
+\makeatother
+
+\definecolor[named]{keywords}{HTML}{005D35}
+\definecolor[named]{comments}{HTML}{808080}
+\definecolor[named]{identifiers}{HTML}{FF0000}
+\colorlet{blockbackground}{white}
+\definecolor[named]{strings}{HTML}{0000FF}
+\usepackage[final]{listings}
+
+\lstset{
+	keywordstyle=,%\bfseries,%RoyalBlue
+	basicstyle=\footnotesize\ttfamily,
+	%identifierstyle=\color{identifiers},
+	commentstyle=\color{comments}\ttfamily\itshape,%Green
+	stringstyle=\color{strings},
+	%numbers=left,
+	%numberstyle=\scriptsize,%\tiny
+	%stepnumber=1,
+	%numbersep=8pt,
+	showstringspaces=false,
+	breaklines=true,
+	frameround=ffff,
+	frame=single,
+	tabsize=4,
+	backgroundcolor=\color{blockbackground},
+	rulecolor=\color{blockbackground},
+	inputencoding=latin1,
+	emphstyle=\color{red},
+	texcl=true,
+	numbersep=0pt
+}
+
+\setlength{\textheight}{24.5cm}     % H<9A>he des Textes
+\setlength{\headheight}{2cm}       % H<9A>he des Headers
+\setlength{\parindent}{0mm}	   % Einzug f�r die erste Zeile im Absatz
+
+\begin{document}
+
+%% Header und Footer definieren
+\pagestyle{fancyplain}
+%% Setzen von Dicke und Breite der Linie unter der Kopfzeile.
+%\setlength{headrulewidth}{1.6pt}
+%% Setzen der Kopflayouts ("`~\\"' erzeugt zus"atzlichen vertikalen Abstand).
+\lhead{\fancyplain{}{\vspace{1.55cm}Haskell\vspace{0.1cm}}} % erscheint links auf ungeraden Seiten
+\chead{\thepage\vspace{0.1cm}} % erscheint zentriert auf beiden Seiten
+\rhead{Cheat Sheet\hspace{2cm}\vspace{0.1cm}} % rechts soll nichts stehen
+\cfoot{}  % im Fu"s soll nichts stehen
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{REPL}
+
+REPL starten mit \texttt{cabal repl} \\
+
+\begin{tabular}{lll}
+Hilfe & \texttt{:help} & \texttt{:h} oder \texttt{:?} \\
+Datei laden & \texttt{:load <filename>} & \texttt{:l <filename>} \\
+Erneutes Laden & \texttt{:reload} & \texttt{:r} \\
+Informationen anzeigen & \texttt{:info} & \texttt{:i} \\
+Typ anzeigen & \texttt{:type <expression>} & \texttt{:t <expression>} \\
+Beenden & \verb#:quit# & \verb#:q# oder \verb#Ctrl-D#
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Kommentare}
+
+\begin{tabular}{ll}
+Für eine Zeile: & \verb#--# auskommentiert \\
+Für einen Block: & \verb#{-# auskommentiert \verb#-}# \\
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Datentypen}
+
+\verb#Int Integer Bool Char [Char] String Float Double# \\
+
+\begin{tabular}{ll}
+\verb#Bool#: & \lstinline!False True! \\
+\verb#Char#: & \lstinline!'a'! \\
+\verb#String#: & \lstinline!"abc"! \\
+\end{tabular}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Operatoren:}
+
+\begin{tabular}{ll}
+Rechenoperatoren: & \verb#+ - * / ^ ** div mod# \\
+Negative Zahlen: & \verb#(-1)# \\
+Listen-Operatoren: & \verb#: ++# \\
+Logische Operatoren: & \verb#&& ||# \\
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Anonyme Funktionen (Lambda-Ausdrücke)}
+
+\verb#\ <Argument1> ... <ArgumentN> -> <Ausdruck># \\
+
+\verb#\a -> 1#  \hspace{2cm} \verb#\x y z -> x#
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Verzweigung}
+
+\verb#if <b> then <x> else <y>#   \hspace{2cm} Ist ein Ausdruck (Expression)!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Tupel}
+
+\begin{tabular}{ll}
+Erzeugung: & \verb#(1, 'a', ... , "hallo")# \\
+Elementzugriff bei Paaren: & \verb#fst snd# \\
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Algebraische Datentypen}
+
+\begin{lstlisting}
+data Bar = Bil (Maybe Int) | Baz
+\end{lstlisting}
+
+\section{Pattern Matching}
+
+\begin{lstlisting}
+f (Bil (Just _)) = ...
+f (Bil Nothing) = ...
+f Baz = ...
+\end{lstlisting}
+
+\section{Listen}
+
+\verb#1 : 2 : 3 : []# \hspace{2cm} \verb#[1, 2, 3]# \\
+
+Pattern Matching findet auf den Konstruktoren \lstinline![]! und \lstinline!(:)! statt:
+
+\begin{lstlisting}
+length :: Num a => [t] -> a
+length [] = 0
+length (x:xs) = 1 + length xs
+\end{lstlisting}
+
+\begin{tabular}{ll}
+Erzeugung: & \verb#[]  :  ++# \\
+Teillisten: & \verb#tail init take drop# \\
+Elementzugriff: & \verb#head last !!# \\
+Eigenschaften: & \verb#null length sum product# \\
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Präfix-Notation}
+
+Funktionen, deren Namen nur aus Sonderzeichen bestehen, werden infix benutzt.
+
+Präfix-Verwendung: Funktionsnamen in runden Klammern.
+
+\begin{lstlisting}[language=Haskell]
+(>->) :: Num a => a -> a -> a
+(>->) x y = x * 10 + y
+\end{lstlisting}
+
+\begin{lstlisting}[language=Haskell]
+(>->) :: Num a => a -> a -> a
+x >-> y = x * 10 + y
+\end{lstlisting}
+
+Anwendung:
+
+\verb#(>->) ((>->) 3 4) 5# \hspace{1cm} vs. \hspace{1cm} \verb#3 >-> 4 >-> 5#
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Infix-Notation}
+
+Anwendung:
+
+\verb#10 `mod` 3# \hspace{1cm} vs. \hspace{1cm} \verb#mod 10 3#
+
+
+
+\end{document}
