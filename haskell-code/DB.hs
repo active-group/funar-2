@@ -21,15 +21,23 @@ type Key = String
 
 -- data Animal = MkParrot Sentence Weight | MkDillo Liveness Weight
 -- Datenbankkommando
-data DBCommand a =
-    Put Key Int
-    | Get Key
-    | Return a
+-- data DBCommand a =
+--     Put Key Int
+--     | Get Key
+--     | Return a
 
 -- DB-Programm mit Rückgabetyp a
-type DBProgram a = [DBCommand a]
+-- type DBProgram a = [DBCommand a]
 
 --                       v Ergebnis?  Wie Namen geben?
 -- p1 = [Put "Johannes" 36, Get "Johannes", Put "Johannes" ???]
 
 -- Liste ist futsch
+
+-- Idee: Abläufe als modellierter Wert!
+
+-- Beschreibung eines Datenbankprogramms mit Ergebnistyp a
+data DB a =
+    Get Key
+  | Put Key Int
+  | Return a
