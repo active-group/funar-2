@@ -111,7 +111,7 @@ p1'' = do -- do-Notation
     Prelude.return (show (x + y))
 
 --          > m "fehlt noch ein Argument"
-class MyMonad m where
+class Applicative m => MyMonad m where
     -- "bind"
     --           v  Typkonstruktor / Funktion auf Typebene
     -- splice :: DB a -> (a -> DB b) -> DB b
