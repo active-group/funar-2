@@ -42,7 +42,7 @@ data DB a =
     -- Callback
     -- Wer das "Get" schreibt, definiert den Callback und damit
     -- die Fortsetzung der Logik
-    -- Get "Johannes" (\x ...)
+    -- Get "Johannes" (\x -> ...)
     Get Key (Int -> )
   | Put Key Int
   | Return a
