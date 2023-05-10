@@ -27,8 +27,13 @@ import Data.Map (Map)
 data GameEvent
     = GameEnded Player -- Gewinner
     | GameStarted Player
-    | CardsShuffled
+    -- | CardsShuffled
     | CardsDistributed Player Hand
     | CardPlayed Player Card
     | TrickTaken Player Trick
     | PlayerTurnChanged Player
+    | IllegalCardAttempted Player Card
+
+data GameCommand
+    = PlayCard Player Card
+    | DealHands (Map Player Hand)
