@@ -55,6 +55,9 @@ data Game a =
     IsCardValid Player Card (Bool -> Game a)
     | Done a
 
+instance Functor Game where
+instance Applicative Game where
+
 instance Monad Game where
     -- (>>=) :: Game a -> (a -> Game b) -> Game b
     (>>=) (Done a) next = next a
