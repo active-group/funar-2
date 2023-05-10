@@ -47,3 +47,9 @@ data GameEvent
     | GameEnded Player
     | IllegalCardAttempted Player Card
     deriving Show
+
+
+-- Wollen Spielablauf modellieren!
+-- Ein Hearts-Programm mit Ergebnis a
+data Game a =
+    Done a
