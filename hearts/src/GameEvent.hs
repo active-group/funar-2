@@ -66,7 +66,7 @@ instance Monad Game where
     return = Done
 
 isCardValidM :: Player -> Card -> Game Bool
-isCardValidM player card = IsCardValid player card (\x -> Done x)
+isCardValidM player card = IsCardValid player card (\b -> Done b)
 
 -- Ergebnis: der Ablauf, der passiert, wenn das Command behandelt wird
 tableProcessCommand :: GameCommand -> Game (Maybe Player)
