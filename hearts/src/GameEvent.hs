@@ -83,4 +83,4 @@ tableProcessCommand (PlayCard player card) = do
         then undefined
         else do 
             recordEventM (IllegalCardAttempted player card)
-            return Nothing
+            return Nothing -- Nothing == Null
