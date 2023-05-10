@@ -7,7 +7,7 @@ import Data.Map (Map, (!))
 
 import Control.Applicative
 import Database.SQLite.Simple
-import Database.SQLite.Simple.FromRow
+import Database.SQLite.Simple.FromRow ()
 
 {-
 
