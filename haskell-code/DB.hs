@@ -177,9 +177,17 @@ runDBAsInMemory mp (Return result) =
 -- benötigen Datentyp für "eine Zeile"
 data Entry = MkEntry Key Int
 
+-- Lesen
+instance FromRow Entry where
+    fromRow = MkEntry <$> field <*> field
+
+-- Schreiben
+instance ToRow Entry where
+    toRow (MkEntry key value) = toRow (key, value)
+
 runDBAsSqlite :: Connection -> DB a -> IO a
 runDBAsSqlite conn (Get key callback) =
-    let value = ???
+    let value = undefined
     in runDBAsSqlite conn (callback value)
 runDBAsSqlite conn (Put key value callback) = undefined
 runDBAsSqlite _ (Return result) = return result -- pure result
