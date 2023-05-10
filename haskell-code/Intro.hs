@@ -324,3 +324,6 @@ instance Semigroup [a] where
     op list1 list2 = list1 ++ list2  -- Listenkonkatenation
 
 -- funktioniert schon für String: :info String!
+
+class Semigroup t => Monoid t where
+    neutral :: t
