@@ -70,8 +70,8 @@ get :: Key -> DB Int
 get key = Get key Return -- tricky Schreibweise
 
 -- Programm, das nichts tut und gleich terminiert mit dem geg. Wert
-return :: a -> DB a
-return = Return
+-- return :: a -> DB a
+-- return = Return
 
 step1 :: DB ()
 step1 = put "Johannes" 36
