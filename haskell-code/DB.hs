@@ -106,7 +106,7 @@ p1' =
 p1'' :: DB String
 p1'' = do -- do-Notation
     put "Johannes" 36   -- "monadischer Wert"
-    -- x <- step2
+    x <- step2
     -- put "Johannes" (x+1)
     -- y <- step2
     y <- increaseAge "Johannes"
