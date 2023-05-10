@@ -52,7 +52,8 @@ data GameEvent
 -- Wollen Spielablauf modellieren!
 -- Ein Hearts-Programm mit Ergebnis a
 data Game a =
-    IsCardValid Player Card (Bool -> Game a)
+      IsCardValid Player Card (Bool -> Game a)
+    | RecordEvent GameEvent (() -> Game a)
     | Done a
 
 instance Functor Game where
@@ -67,6 +68,9 @@ instance Monad Game where
 
 isCardValidM :: Player -> Card -> Game Bool
 isCardValidM player card = IsCardValid player card (\b -> Done b)
+
+recordEventM :: GameEvent -> Game ()
+recordEventM evt = RecordEvent evt Done
 
 -- Ergebnis: der Ablauf, der passiert, wenn das Command behandelt wird
 tableProcessCommand :: GameCommand -> Game (Maybe Player)
