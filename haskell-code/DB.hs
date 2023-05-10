@@ -156,4 +156,5 @@ increaseAge key = do
 runDBAsInMemory :: Map Key Integer -> DB a -> a
 runDBAsInMemory mp (Get key callback) = undefined
 runDBAsInMemory mp (Put key value callback) = undefined
-runDBAsInMemory mp (Return result) = undefined
+runDBAsInMemory mp (Return result) =
+    result
