@@ -171,3 +171,6 @@ runDBAsInMemory mp (Return result) =
 -- wir nutzen stattdessen andere Interpreter-Funktionen
 
 runDBAsSqlite :: Connection -> DB a -> IO a
+runDBAsSqlite conn (Get key callback) = undefined
+runDBAsSqlite conn (Put key value callback) = undefined
+runDBAsSqlite _ (Return result) = return result
