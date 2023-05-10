@@ -102,6 +102,7 @@ p1' =
     splice (get "Johannes") (\y ->
     Return (show (x+y))))))
 
+-- Syntaktischer Zucker für p1'
 p1'' :: DB String
 p1'' = do -- do-Notation
     put "Johannes" 36
