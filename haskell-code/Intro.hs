@@ -355,3 +355,5 @@ instance (Monoid a, Monoid b) => Monoid (a, b) where
 
 -- Stattdessen:
 -- if True then myString `op` someOtherString else neutral
+
+instance Semigroup a => Semigroup (Optional a) where
