@@ -42,7 +42,7 @@ data DB a =
     -- Callback
     -- Wer das "Get" schreibt, definiert den Callback und damit
     -- die Fortsetzung der Logik
-    -- Get "Johannes" (\value -> ...)
+    -- Get "Johannes" (\value -haskell-code/DB.hs> ...)
     Get Key (Int -> )
   | Put Key Int
   | Return a
