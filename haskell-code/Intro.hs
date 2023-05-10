@@ -365,7 +365,8 @@ instance Semigroup a => Semigroup (Optional a) where
     op (Result a1) (Result a2) = Result (a1 `op` a2)
 
 -- Bonus:
-instance ??? => Monoid (Optional a) where
+instance Monoid (Optional a) where
     -- neutral :: Optional a
-    neutral = Result ???
+    -- op neutral x == x
+    -- neutral = Result ???
     neutral = Null
