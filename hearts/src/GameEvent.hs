@@ -61,6 +61,8 @@ instance Applicative Game where
 instance Monad Game where
     -- (>>=) :: Game a -> (a -> Game b) -> Game b
     (>>=) (Done a) next = next a
+    (>>=) (IsCardValid player card callback) next =
+        IsCardValid player card (\b -> (>>=) (callback b) next)
     return = Done
 
 isCardValidM :: Player -> Card -> Game Bool
