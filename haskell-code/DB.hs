@@ -123,6 +123,13 @@ class MyFunctor m where
     -- map :: (a -> b) -> List a -> List b
     map' ::   (a -> b) -> m a    -> m b
 
+data Optional a = Result a | Null
+
+instance MyFunctor Optional where
+    -- map' :: (a -> b) -> Optional a -> Optional b
+    map' f Null = Null
+    map' f (Result x) = undefined
+
 instance Functor DB where
 instance Applicative DB where
 
