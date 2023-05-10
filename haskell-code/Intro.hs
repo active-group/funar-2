@@ -328,3 +328,6 @@ instance Semigroup [a] where
 class Semigroup t => Monoid t where
     -- Gesetz:   neutral `op` x == x == x `op` neutral
     neutral :: t
+
+instance Monoid [a] where
+    neutral = []
