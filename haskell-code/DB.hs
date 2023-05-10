@@ -165,3 +165,7 @@ runDBAsInMemory mp (Put key value callback) =
     in runDBAsInMemory newMp (callback ())
 runDBAsInMemory _ (Return result) =
     result
+
+-- ^ nützlich für Unit-Tests
+-- FP:  wir injizieren keine alternativen Implementierungen für DBs,
+-- wir nutzen stattdessen andere Interpreter-Funktionen
