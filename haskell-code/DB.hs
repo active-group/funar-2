@@ -89,4 +89,5 @@ step2 = get "Johannes"
 splice :: DB a -> (a -> DB b) -> DB b
 splice (Get key callback) next = undefined
 splice (Put key value callback) next = undefined
-splice (Return result) next = undefined
+-- Das Ende des Seils -> hier wird gearbeitet
+splice (Return result) next = next result
