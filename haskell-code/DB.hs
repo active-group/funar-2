@@ -59,8 +59,11 @@ p1 =
 -- Einfache Datenbankprogramme:
 -- 1) Gib einen festen Wert zurück (ohne in die DB zu schauen)
 -- 2) Schreibe einen Wert und sei fertig
--- 2) Lese einen Wert und sei fertig
+-- 2) Lies einen Wert und sei fertig
 
 -- primitive Hilfsfunktion / Hilfsprogramm
-put :: Key -> Int -> DB ()
+put :: Key -> Int -> DB () -- "void"
 put key val = Put key val (\() -> Return ()) -- brauche: DB ()
+
+get :: Key -> DB Int
+get key = Get key (\result -> Return result) 
