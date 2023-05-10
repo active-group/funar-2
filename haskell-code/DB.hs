@@ -1,5 +1,8 @@
 module DB where
 
+import qualified Data.Map as Map -- alle Funktionen benutzen mit Map.
+import Data.Map (Map, (!))
+
 {-
 
 Wollen: Key-Value-Store verwenden
@@ -147,3 +150,7 @@ increaseAge key = do
     let newAge = age + 1
     put key newAge
     return newAge
+
+-- Datenbankprogramm ausführen (in-memory)
+-- "dependency injection"
+runDBAsInMemory :: Map Key Integer -> DB a -> a
