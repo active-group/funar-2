@@ -113,7 +113,7 @@ p1'' = do -- do-Notation
 --          > m "fehlt noch ein Argument"
 class Monad m where
     -- "bind"
-    --           v  Typkonstruktor
+    --           v  Typkonstruktor / Funktion auf Typebene
     -- splice :: DB a -> (a -> DB b) -> DB b
     (>>=) ::     m  a -> (a -> m  b) -> m  b
 
