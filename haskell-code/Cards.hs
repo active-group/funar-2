@@ -18,7 +18,7 @@ data Rank =
     One | Two | Three | Four | Five | Six | Seven
     | Eight | Nine | Ten | Jack | Queen | King
     | Ace
-    deriving (Eq, Show)
+    deriving (Eq, Show, Enum, Bounded)
 
 allRanks :: [Rank]
 allRanks = [minBound .. maxBound]
