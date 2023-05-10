@@ -26,4 +26,8 @@ data DBCommand a =
     | Get Key
     | Return a
 
+-- DB-Programm mit Rückgabetyp a
 type DBProgram a = [DBCommand a]
+
+--                       v Ergebnis?  Wie Namen geben?
+p1 = [Put "Johannes" 36, Get "Johannes", Put "Johannes" ???]
