@@ -332,6 +332,6 @@ class Semigroup t => Monoid t where
 instance Monoid [a] where
     neutral = []
 
-instance Semigroup (a, b) where
+instance (Semigroup a, Semigroup b) => Semigroup (a, b) where
     -- op :: (a, b) -> (a, b) -> (a, b)
     op (a1, b1) (a2, b2) = (op a1 a2, op b1 b2)
