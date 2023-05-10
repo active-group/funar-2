@@ -20,6 +20,11 @@ data Rank =
     | Ace
     deriving (Eq, Show)
 
+allRanks :: [Rank]
+allRanks = [minBound .. maxBound]
+-- >>> allSuits
+-- [Clubs,Spades,Hearts,Diamonds]
+
 data Card = Card { suit :: Suit, rank :: Rank }
     deriving (Eq, Show)
 
