@@ -45,5 +45,5 @@ data DB a =
     -- Get "Johannes" (\x -> ... -- Restablauf)
     Get Key (Int -> DB a) -- Selbstbezug!
     -- Fortsetzung == Callback
-  | Put Key Int (() -> DB a)
+  | Put Key Int (() -> DB a)  -- () heißt Unit (denkt: void)
   | Return a
