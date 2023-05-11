@@ -196,6 +196,6 @@ runGame (IsGameOver callback) state revents =
 -- fehlt noch: RecordEvent, Done, WaitForCommand
 runGame (Done result) state events =
   (state, reverse events, result)
-runGame (RecordEvent evt) state events =
+runGame (RecordEvent evt callback) state events =
   let newState = tableProcessEvent evt state
   in runGame (callback ()) newState (event : events)
