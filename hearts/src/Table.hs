@@ -200,4 +200,4 @@ runGame (RecordEvent evt callback) state events =
   let newState = tableProcessEvent evt state
   in runGame (callback ()) newState (evt : events)
 runGame (WaitForCommand callback) state events =
-  (state, reverse events, Left (\cmd -> callback cmd))
+  (state, reverse events, Left callback)
