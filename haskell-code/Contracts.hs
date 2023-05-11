@@ -98,7 +98,7 @@ semantics (One curr) now =
     (Empty, [Payment ForMe now 1 curr])
 semantics (Negate inner) now =
     let (restContract, payments) = semantics inner now
-     in (restContract, map negatePayment payments)
+     in (Negate restContract, map negatePayment payments)
 semantics (Both c1 c2) now = undefined
 semantics (Times amount inner) now = undefined
 semantics contract@(AtDate date inner) now =
