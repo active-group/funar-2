@@ -88,7 +88,7 @@ turnOverTrickM = TurnOverTrick Done
 playerAfterM :: Player -> Game Player
 playerAfterM player = PlayerAfter player Done
 
-isGameOverM :: Game Player
+isGameOverM :: Game (Maybe Player)
 isGameOverM = IsGameOver Done
 
 -- Ergebnis: der Ablauf, der passiert, wenn das Command behandelt wird
