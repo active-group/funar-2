@@ -6,4 +6,9 @@ module Contracts where
 data Date = MkDate String
   deriving (Eq, Show, Ord)
 
+type Amount = Float
+
+data Currency = EUR | GBP | USD | YEN
+  deriving Show
+
 data 
