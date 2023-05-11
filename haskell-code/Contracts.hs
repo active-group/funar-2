@@ -46,3 +46,4 @@ oneHundredEurosNow = Times 100 oneEuro
 data Contract
     = One Currency    --- ich bekomme _jetzt_ 1 EUR
     | Times Amount Contract -- 100 * Vertrag
+    | AtDate Date Contract
