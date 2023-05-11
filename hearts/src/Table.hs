@@ -180,4 +180,4 @@ tableProcessEvent (IllegalCardAttempted player card) state = state
 --                                 v  akt. Logbuch
 --                                                v  Ergebniszustand
 --                                                                v  Ergebnislogbuch
-runGame :: Game a -> TableState -> [GameEvent] -> (TableState, a, [GameEvent]
+runGame :: Game a -> TableState -> [GameEvent] -> (TableState, [GameEvent], a)
