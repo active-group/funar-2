@@ -101,7 +101,7 @@ waitForCommandM = WaitForCommand Done
 -- Ergebnis: der Ablauf, der passiert, wenn das Command behandelt wird
 tableProcessCommand :: GameCommand -> Game (Maybe Player)
 -- nachträglich implementiert:
-tableProcessCommand (DealHands hands) =
+tableProcessCommand (DealHands hands) = do
     mapM_ (\(p, h) -> recordEventM (HandDealt p h)) (Map.toList hands)
     return Nothing
 tableProcessCommand (PlayCard player card) = do
