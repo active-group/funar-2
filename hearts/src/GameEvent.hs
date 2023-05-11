@@ -73,6 +73,9 @@ isCardValidM player card = IsCardValid player card (\b -> Done b)
 recordEventM :: GameEvent -> Game ()
 recordEventM evt = RecordEvent evt Done
 
+turnOverTrickM :: GameEvent -> Game ()
+turnOverTrickM evt = TurnOverTrick Done
+
 -- Ergebnis: der Ablauf, der passiert, wenn das Command behandelt wird
 tableProcessCommand :: GameCommand -> Game (Maybe Player)
 tableProcessCommand (DealHands hands) = undefined
@@ -81,7 +84,7 @@ tableProcessCommand (PlayCard player card) = do
     if isCardValid
         then do
             recordEventM (LegalCardPlayed player card)
-            undefined
+            turnOverTrick <- turnOverTrickM
         else do 
             recordEventM (IllegalCardAttempted player card)
             return Nothing -- Nothing == Null
