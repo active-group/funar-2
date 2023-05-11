@@ -1,5 +1,5 @@
 module Table(TableState, emptyTableState,
-             runTable)
+             runGame)
 where
 
 import qualified Data.Foldable as Foldable
@@ -183,7 +183,7 @@ tableProcessEvent (IllegalCardAttempted player card) state = state
 --                                                v  Ergebniszustand
 --                                                                v  Ergebnislogbuch
 -- Ein anderes Spiel mit gleichem Ablauf -> anderer Interpreter
-runGame :: Game a -> TableState -> [GameEvent] -> (TableState, [GameEvent], a)
+runGame :: Game a -> TableState -> [GameEvent] -> (TableState, [GameEvent], Either (GameCommand -> Game a) a)
 runGame (IsCardValid player card callback) state events =
   runGame (callback (playValid state player card)) state events
 runGame (TurnOverTrick callback) state events =
@@ -195,7 +195,9 @@ runGame (IsGameOver callback) state revents =
 
 -- fehlt noch: RecordEvent, Done, WaitForCommand
 runGame (Done result) state events =
-  (state, reverse events, result)
+  (state, reverse events, Right result)
 runGame (RecordEvent evt callback) state events =
   let newState = tableProcessEvent evt state
   in runGame (callback ()) newState (event : events)
+runGame (WaitForCommand callback) state events =
+  (state, reverse events, Left (\cmd -> callback cmd))
