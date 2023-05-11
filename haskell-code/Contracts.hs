@@ -21,12 +21,21 @@ type Amount = Float
 data Currency = EUR | GBP | USD | YEN
   deriving Show
 
-data Contract =
-    ZeroCouponBond Date Amount Currency
-    | CurrencySwap Date (Amount, Currency) (Amount, Currency)
-    -- müsste alles als einzelnen Fall aufnehmen
-    | ...
-    deriving (Show)
+-- data Contract =
+--     ZeroCouponBond Date Amount Currency
+--     | CurrencySwap Date (Amount, Currency) (Amount, Currency)
+--     -- müsste alles als einzelnen Fall aufnehmen
+--     | ...
+--     deriving (Show)
 
 zcb :: Contract
 zcb = ZeroCouponBond (MkDate "24.12.2023") 100 EUR
+
+-- Elementare Bestandteile:
+--  -- Menge
+--  -- Währung
+--  -- Datum
+--  -- Empfänger
+
+data Contract
+    = 
