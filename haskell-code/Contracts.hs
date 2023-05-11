@@ -95,5 +95,7 @@ semantics (One curr) now =
 semantics (Negate inner) now = undefined
 semantics (Both c1 c2) now = undefined
 semantics (Times amount inner) now = undefined
-semantics (AtDate date inner) now = undefined
+semantics contract@(AtDate date inner) now =
+    if date > now
+        then (contract, [])  -- es passiert noch nichts
 semantics Empty _ = (Empty, [])
