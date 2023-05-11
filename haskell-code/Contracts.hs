@@ -95,3 +95,4 @@ semantics (Negate inner) now = undefined
 semantics (Both c1 c2) now = undefined
 semantics (Times amount inner) now = undefined
 semantics (AtDate date inner) now = undefined
+semantics Empty now = (Empty, [])
