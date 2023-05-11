@@ -66,3 +66,19 @@ currencySwap date (myAmount, myCurrency) (theirAmount, theirCurrency) =
     --                   (Negate (Times theirAmount (One theirCurrency))))
     Both (makeZcb date myAmount myCurrency)
          (Negate (makeZcb date theirAmount theirCurrency))
+
+-- im Paper:
+-- scale :: Obs Float -> Contract -> Contract
+
+-- Interpreter für Verträge
+-- Sichtweise: Wer bekommt wann wieviel Geld?
+-- Konkreter:  Wenn ich den Vertrag heute anschauen, 
+-- welche Zahlungen entstehen daraus?
+
+-- Haben: Syntax (Contract)
+-- Brauchen: Semantik(en)
+
+data Direction = Long | Short
+    deriving Show
+
+data Payment = Payment Direction Date Amount Currency
