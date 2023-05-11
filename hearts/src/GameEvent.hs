@@ -79,10 +79,10 @@ isCardValidM player card = IsCardValid player card (\b -> Done b)
 recordEventM :: GameEvent -> Game ()
 recordEventM evt = RecordEvent evt Done
 
-turnOverTrickM :: Game ()
+turnOverTrickM :: Game (Maybe (Player, Trick))
 turnOverTrickM = TurnOverTrick Done
 
-playerAfterM :: Player -> Game ()
+playerAfterM :: Player -> Game Player
 playerAfterM player = PlayerAfter player Done
 
 -- Ergebnis: der Ablauf, der passiert, wenn das Command behandelt wird
