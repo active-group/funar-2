@@ -56,6 +56,6 @@ data Contract
     | Times Amount Contract -- 100 * Vertrag
     | AtDate Date Contract  -- an 'Date' wird Vertrag fällig
     -- | All [Contract]
-    | Both Contract Conctract
+    | Both Contract Contract
     deriving Show
 
