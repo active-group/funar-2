@@ -35,7 +35,7 @@ makeZcb :: Date -> Amount -> Currency -> Contract
 makeZcb d a c = AtDate d (Times a (One c))
 
 -- >>> makeZcb (MkDate "24.12.2023") 100 EUR
--- No instance for (Show Contract) arising from a use of ‘evalPrint’
+-- AtDate (MkDate "24.12.2023") (Times 100.0 (One EUR))
 
 -- AtDate 24.12.2023 (AtDate 6.10.2024 (Times 250 (One YEN)))
 
@@ -55,5 +55,7 @@ data Contract
     = One Currency    --- ich bekomme _jetzt_ 1 EUR
     | Times Amount Contract -- 100 * Vertrag
     | AtDate Date Contract  -- an 'Date' wird Vertrag fällig
+    -- | All [Contract]
+    | Both Contract Conctract
     deriving Show
 
