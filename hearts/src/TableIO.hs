@@ -13,7 +13,7 @@ tableIO players =
      let processCommand command =          
            do (next, state) <- IORef.readIORef ref
               putStrLn ("processCommand " ++ (show command))
-              let (state', events, step) = runTable (next command) state []              
+              let (state', events, step) = runGame (next command) state []              
               case step of
                 Left cont ->
                   do putStrLn ("NeedsCommand")
