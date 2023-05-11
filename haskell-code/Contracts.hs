@@ -67,7 +67,14 @@ instance Semigroup Contract where
 
 instance Monoid Contract where
     -- neutral :: Contract
+    -- müsste gelten:  Both Empty x == x
     mempty = Empty
+
+-- besser als Both:
+both :: Contract -> Contract -> Contract
+both Empty x = x
+both x Empty = x
+both x y = Both x y
 
 currencySwap :: Date -> (Amount, Currency) -> (Amount, Currency) -> Contract
 currencySwap date (myAmount, myCurrency) (theirAmount, theirCurrency) =
