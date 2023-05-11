@@ -78,7 +78,7 @@ currencySwap date (myAmount, myCurrency) (theirAmount, theirCurrency) =
 -- Haben: Syntax (Contract)
 -- Brauchen: Semantik(en)
 
-data Direction = Long | Short
+data Direction = ForMe | ForSomeoneElse -- Long | Short
     deriving Show
 
 data Payment = Payment Direction Date Amount Currency
