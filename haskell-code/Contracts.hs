@@ -29,7 +29,7 @@ data Currency = EUR | GBP | USD | YEN
 --     deriving (Show)
 
 zcb :: Contract
-zcb = ZeroCouponBond (MkDate "24.12.2023") 100 EUR
+zcb = AtDate (MkDate "24.12.2023") (Times 100 (One EUR))
 
 -- Elementare Bestandteile:
 --  -- Menge
@@ -46,4 +46,5 @@ oneHundredEurosNow = Times 100 oneEuro
 data Contract
     = One Currency    --- ich bekomme _jetzt_ 1 EUR
     | Times Amount Contract -- 100 * Vertrag
-    | AtDate Date Contract
+    | AtDate Date Contract  -- an 'Date' wird Vertrag fällig
+
