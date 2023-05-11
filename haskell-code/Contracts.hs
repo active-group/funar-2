@@ -85,6 +85,10 @@ data Direction = ForMe | ForSomeoneElse -- Long | Short
 data Payment = Payment Direction Date Amount Currency
     deriving Show
 
+negatePayment :: Payment -> Payment
+negatePayment (Payment ForMe d a c) = Payment ForSomeoneElse d a c
+negatePayment (Payment ForSomeoneElse d a c) = Payment ForMe d a c
+
 -- Welche Zahlungen entstehen, wenn ich den Vertrag am Datum x anschaue?
 --                       v   "jetzt"
 --                               v   Restvertrag (was ist noch zu erledigen?)
@@ -92,7 +96,9 @@ data Payment = Payment Direction Date Amount Currency
 semantics :: Contract -> Date -> (Contract, [Payment])
 semantics (One curr) now = 
     (Empty, [Payment ForMe now 1 curr])
-semantics (Negate inner) now = undefined
+semantics (Negate inner) now =
+    let (restContract, payments) = semantics inner now
+     in (restContract, map negatePayment payments)
 semantics (Both c1 c2) now = undefined
 semantics (Times amount inner) now = undefined
 semantics contract@(AtDate date inner) now =
