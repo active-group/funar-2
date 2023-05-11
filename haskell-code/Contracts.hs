@@ -90,7 +90,7 @@ data Payment = Payment Direction Date Amount Currency
 --                               v   Restvertrag (was ist noch zu erledigen?)
 --                                          v   resultierende Zahlungen
 semantics :: Contract -> Date -> (Contract, [Payment])
-semantics (One curr) now = (, [Payment ForMe now 1 curr])
+semantics (One curr) now = (Empty, [Payment ForMe now 1 curr])
 semantics (Negate inner) now = undefined
 semantics (Both c1 c2) now = undefined
 semantics (Times amount inner) now = undefined
