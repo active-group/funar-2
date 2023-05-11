@@ -86,4 +86,11 @@ data Payment = Payment Direction Date Amount Currency
 
 -- Welche Zahlungen entstehen, wenn ich den Vertrag am Datum x anschaue?
 --                       v   "jetzt"
+--                               v   Restvertrag (was ist noch zu erledigen?)
+--                                          v   resultierende Zahlungen
 semantics :: Contract -> Date -> (Contract, [Payment])
+semantics (One curr) now = undefined
+semantics (Negate inner) now = undefined
+semantics (Both c1 c2) now = undefined
+semantics (Times amount inner) now = undefined
+semantics (AtDate date inner) now = undefined
