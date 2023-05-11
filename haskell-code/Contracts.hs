@@ -63,7 +63,7 @@ data Contract
 
 instance Semigroup Contract where
     -- op :: Contract -> Contract -> Contract
-    (<>) c1 c2 = Both c1 c2
+    (<>) c1 c2 = both c1 c2
 
 instance Monoid Contract where
     -- neutral :: Contract
