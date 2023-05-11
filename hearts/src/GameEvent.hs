@@ -56,6 +56,7 @@ data Game a =
     | TurnOverTrick (Maybe (Player, Trick) -> Game a)
     | PlayerAfter Player (Player -> Game a)
     | IsGameOver (Maybe Player -> Game a)
+    | WaitForCommand (GameCommand -> Game a)
     | Done a
 
 instance Functor Game where
@@ -74,6 +75,8 @@ instance Monad Game where
         PlayerAfter player (\b -> (>>=) (callback b) next)
     (>>=) (IsGameOver callback) next =
         IsGameOver (\b -> (>>=) (callback b) next)
+    (>>=) (WaitForCommand callback) next =
+        WaitForCommand (\b -> (>>=) (callback b) next)
     return = Done
 
 isCardValidM :: Player -> Card -> Game Bool
@@ -90,6 +93,9 @@ playerAfterM player = PlayerAfter player Done
 
 isGameOverM :: Game (Maybe Player)
 isGameOverM = IsGameOver Done
+
+waitForCommandM :: Game GameCommand
+waitForCommandM = WaitForCommand Done
 
 -- Ergebnis: der Ablauf, der passiert, wenn das Command behandelt wird
 tableProcessCommand :: GameCommand -> Game (Maybe Player)
