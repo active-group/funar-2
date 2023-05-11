@@ -67,7 +67,7 @@ instance Semigroup Contract where
 
 instance Monoid Contract where
     -- neutral :: Contract
-    -- müsste gelten:  Both Empty x == x
+    -- müsste gelten:  both Empty x == x
     mempty = Empty
 
 -- besser als Both:
