@@ -82,3 +82,8 @@ data Direction = ForMe | ForSomeoneElse -- Long | Short
     deriving Show
 
 data Payment = Payment Direction Date Amount Currency
+    deriving Show
+
+-- Welche Zahlungen entstehen, wenn ich den Vertrag am Datum x anschaue?
+--                       v   "jetzt"
+semantics :: Contract -> Date -> [Payments]
