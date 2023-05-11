@@ -100,7 +100,8 @@ tableProcessCommand (PlayCard player card) = do
                 Nothing -> do
                     -- brauchen nächsten Spieler
                     nextPlayer <- playerAfterM player
-                    undefined
+                    recordEventM (PlayerTurnChanged nextPlayer)
+                    return Nothing -- es gibt noch keinen Gewinner
         else do 
             recordEventM (IllegalCardAttempted player card)
             return Nothing -- Nothing == Null
