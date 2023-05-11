@@ -114,8 +114,8 @@ tableProcessCommand (PlayCard player card) = do
                     nextPlayer <- playerAfterM player
                     recordEventM (PlayerTurnChanged nextPlayer)
                     return Nothing -- es gibt noch keinen Gewinner
-                Just (trickTaker, trick) -> do
-                    recordEventM (TrickTaken trick trickTaker)
+                Just (trick, trickTaker) -> do
+                    recordEventM (TrickTaken trickTaker trick)
                     potentialWinner <- isGameOverM
                     case potentialWinner of
                         -- noch niemand hat gewonnen
