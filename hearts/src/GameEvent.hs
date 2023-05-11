@@ -67,6 +67,10 @@ instance Monad Game where
         IsCardValid player card (\b -> (>>=) (callback b) next)
     (>>=) (RecordEvent evt callback) next =
         RecordEvent evt (\b -> (>>=) (callback b) next)
+    (>>=) (TurnOverTrick playerWithTrick callback) next =
+        TurnOverTrick playerWithTrick (\b -> (>>=) (callback b) next)
+    (>>=) (RecordEvent evt callback) next =
+        RecordEvent evt (\b -> (>>=) (callback b) next)
     return = Done
 
 isCardValidM :: Player -> Card -> Game Bool
