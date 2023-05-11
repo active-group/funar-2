@@ -37,6 +37,7 @@ import Data.Map (Map)
 data GameCommand
     = PlayCard Player Card
     | DealHands (Map Player Hand)
+    deriving Show
 
 data GameEvent
     = HandDealt Player Hand
