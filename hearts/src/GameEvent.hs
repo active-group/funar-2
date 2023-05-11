@@ -122,3 +122,13 @@ tableProcessCommand (PlayCard player card) = do
         else do 
             recordEventM (IllegalCardAttempted player card)
             return Nothing -- Nothing == Null
+
+-- das gesamte Spiel (als _ein_ Wert)
+tableLoopM :: GameCommand -> Game Player
+tableLoopM cmd = do
+    maybeWinner <- tableProcessCommand cmd
+    case maybeWinner of
+        Just winner -> return winner
+        Nothing -> do
+            nextCommand <- waitForCommandM
+            tableLoopM nextCommand
