@@ -54,7 +54,7 @@ data Game a =
       IsCardValid Player Card (Bool -> Game a)
     | RecordEvent GameEvent (() -> Game a)
     | TurnOverTrick (Maybe (Player, Trick) -> Game a)
-    | PlayerAfter (Player -> Game a)
+    | PlayerAfter Player (Player -> Game a)
     | Done a
 
 instance Functor Game where
