@@ -35,7 +35,11 @@ zcb = ZeroCouponBond (MkDate "24.12.2023") 100 EUR
 --  -- Menge
 --  -- Währung
 --  -- Datum
---  -- Empfänger
+--  -- (Empfänger)
+
+oneEuro :: Contract
+oneEuro = One EUR
 
 data Contract
-    = 
+    = One Currency    --- ich bekomme _jetzt_ 1 EUR
+    | Times Amount Contract
