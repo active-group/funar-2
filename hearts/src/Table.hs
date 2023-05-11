@@ -191,3 +191,5 @@ runGame (PlayerAfter player callback) state revents =
   runGame (callback (playerAfter state player)) state revents
 runGame (IsGameOver callback) state revents =
   runGame (callback (gameOver state)) state revents
+
+-- fehlt noch: RecordEvent, Done, WaitForCommand
