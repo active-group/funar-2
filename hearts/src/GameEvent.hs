@@ -53,7 +53,7 @@ data GameEvent
 data Game a =
       IsCardValid Player Card (Bool -> Game a)
     | RecordEvent GameEvent (() -> Game a)
-    | TurnOverTrick (Maybe (Player, Trick) -> Game a)
+    | TurnOverTrick (Maybe (Trick, Player) -> Game a)
     | PlayerAfter Player (Player -> Game a)
     | IsGameOver (Maybe Player -> Game a)
     | WaitForCommand (GameCommand -> Game a)
@@ -85,7 +85,7 @@ isCardValidM player card = IsCardValid player card (\b -> Done b)
 recordEventM :: GameEvent -> Game ()
 recordEventM evt = RecordEvent evt Done
 
-turnOverTrickM :: Game (Maybe (Player, Trick))
+turnOverTrickM :: Game (Maybe (Trick, Player))
 turnOverTrickM = TurnOverTrick Done
 
 playerAfterM :: Player -> Game Player
