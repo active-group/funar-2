@@ -100,7 +100,7 @@ scalePayment amount (Payment dir date x curr) =
 semantics :: Contract -> Date -> (Contract, [Payment])
 semantics (One curr) now = 
     (Empty, [Payment ForMe now 1 curr])
-semantics (Negate Empty) = (Empty, [])
+semantics (Negate Empty) now = (Empty, [])
 semantics (Negate inner) now =
     let (restContract, payments) = semantics inner now
      in (Negate restContract, map negatePayment payments)
