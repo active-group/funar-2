@@ -6,7 +6,7 @@ module Contracts where
 -- Currency-Swap
 --  Am 24.12.2023 passiert Folgendes:
 --  Ich bekomme 100 EUR
---  Ich bezahl 150 GBP
+--  Ich bezahle 150 GBP
 
 data Date = MkDate String
   deriving (Eq, Show, Ord)
