@@ -61,6 +61,10 @@ data Contract
     | Empty
     deriving Show
 
+instance Semigroup Contract where
+    -- op :: Contract -> Contract -> Contract
+    (<>) c1 c2 = Both c1 c2
+
 currencySwap :: Date -> (Amount, Currency) -> (Amount, Currency) -> Contract
 currencySwap date (myAmount, myCurrency) (theirAmount, theirCurrency) =
     -- AtDate date (Both (Times myAmount (One myCurrency))
