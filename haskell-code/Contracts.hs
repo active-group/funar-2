@@ -11,4 +11,6 @@ type Amount = Float
 data Currency = EUR | GBP | USD | YEN
   deriving Show
 
-data 
+data Contract =
+    ZeroCouponBond Date Amount Currency
+    deriving (Show)
