@@ -194,3 +194,5 @@ runGame (IsGameOver callback) state revents =
   runGame (callback (gameOver state)) state revents
 
 -- fehlt noch: RecordEvent, Done, WaitForCommand
+runGame (Done result) state events =
+  (state, reverse events, result)
