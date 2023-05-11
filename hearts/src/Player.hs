@@ -204,7 +204,7 @@ instance TtyPlayerMonad (Free StateTtyPlayer') where
   writeLineM line = Impure (WriteLineT line Pure)
 
 -- interaktiver Spieler
-chooseInteractive :: (StatePlayerMonad m, RestApiPlayerMonad m) => m Card
+chooseInteractive :: (StatePlayerMonad m, TtyPlayerMonad m) => m Card
 chooseInteractive =
   do
     playerState <- getPlayerStateM
