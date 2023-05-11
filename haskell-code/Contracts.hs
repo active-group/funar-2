@@ -104,10 +104,12 @@ semantics (Negate Empty) now = (Empty, [])
 semantics (Negate inner) now =
     let (restContract, payments) = semantics inner now
      in (Negate restContract, map negatePayment payments)
+semantics (Both Empty Empty) now = (Empty, [])
 semantics (Both c1 c2) now =
     let (rest1, payments1) = semantics c1 now
         (rest2, payments2) = semantics c2 now
      in (Both rest1 rest2, payments1 <> payments2)
+semantics (Times _ Empty) now = (Empty, [])
 semantics (Times amount inner) now =
     let (restContract, payments) = semantics inner now
      in (Times amount inner, map (scalePayment amount) payments)
