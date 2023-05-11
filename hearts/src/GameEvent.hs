@@ -54,6 +54,7 @@ data Game a =
       IsCardValid Player Card (Bool -> Game a)
     | RecordEvent GameEvent (() -> Game a)
     | TurnOverTrick (Maybe (Player, Trick) -> Game a)
+    | PlayerAfter (Player -> Game a)
     | Done a
 
 instance Functor Game where
@@ -75,7 +76,10 @@ recordEventM :: GameEvent -> Game ()
 recordEventM evt = RecordEvent evt Done
 
 turnOverTrickM :: GameEvent -> Game ()
-turnOverTrickM evt = TurnOverTrick Done
+turnOverTrickM = TurnOverTrick Done
+
+playerAfterM :: Player -> Game ()
+playerAfterM player = PlayerAfter playeer Done
 
 -- Ergebnis: der Ablauf, der passiert, wenn das Command behandelt wird
 tableProcessCommand :: GameCommand -> Game (Maybe Player)
@@ -85,7 +89,13 @@ tableProcessCommand (PlayCard player card) = do
     if isCardValid
         then do
             recordEventM (LegalCardPlayed player card)
+            -- Prüfen, (ob) wer den Stich bekommt
             turnOverTrick <- turnOverTrickM
+            case turnOverTrick of
+                -- Niemand bekommt den Stich
+                Nothing -> do
+                    -- brauchen nächsten Spieler
+                    nextPlayer <- playerAfterM player
         else do 
             recordEventM (IllegalCardAttempted player card)
             return Nothing -- Nothing == Null
