@@ -18,6 +18,7 @@ data Currency = EUR | GBP | USD | YEN
 
 data Contract =
     ZeroCouponBond Date Amount Currency
+    | CurrencySwap Date (Amount, Currency) (Amount, Currency)
     deriving (Show)
 
 zcb :: Contract
