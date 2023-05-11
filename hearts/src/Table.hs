@@ -187,7 +187,7 @@ runGame (IsCardValid player card callback) state events =
   runGame (callback (playValid state player card)) state events
 runGame (TurnOverTrick callback) state events =
   runGame (callback (turnOverTrick state)) state events
-runGame (PlayerAfter player cont) state revents =
-  runGame (cont (playerAfter state player)) state revents
-runGame (IsGameOver cont) state revents =
-  runGame (cont (gameOver state)) state revents
+runGame (PlayerAfter player callback) state revents =
+  runGame (callback (playerAfter state player)) state revents
+runGame (IsGameOver callback) state revents =
+  runGame (callback (gameOver state)) state revents
