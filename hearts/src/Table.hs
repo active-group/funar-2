@@ -175,9 +175,12 @@ tableProcessEvent (TrickTaken player trick) state =
 tableProcessEvent (GameEnded winner) state = state
 tableProcessEvent (IllegalCardAttempted player card) state = state
 
+-- (Purer) Interpreter für Spielablauf
+-- --> mappt Konstruktoren von Game auf Logik
 --         v  Spielablauf, der ausgeführt wird
 --                   v  akt. Zustand
 --                                 v  akt. Logbuch
 --                                                v  Ergebniszustand
 --                                                                v  Ergebnislogbuch
 runGame :: Game a -> TableState -> [GameEvent] -> (TableState, [GameEvent], a)
+runGame (IsCardValid player card callback)
