@@ -100,7 +100,9 @@ semantics (Negate inner) now =
     let (restContract, payments) = semantics inner now
      in (Negate restContract, map negatePayment payments)
 semantics (Both c1 c2) now = undefined
-semantics (Times amount inner) now = undefined
+semantics (Times amount inner) now =
+    let (restContract, payments) = semantics inner now
+     in (Times amount inner, map (scalePayment amount) payments)
 semantics contract@(AtDate date inner) now =
     if date > now
         then (contract, [])  -- es passiert noch nichts
