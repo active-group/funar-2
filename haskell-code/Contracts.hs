@@ -57,5 +57,6 @@ data Contract
     | AtDate Date Contract  -- an 'Date' wird Vertrag fällig
     -- | All [Contract]
     | Both Contract Contract -- beides
+    | Negate Contract
     deriving Show
 
