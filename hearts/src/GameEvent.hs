@@ -85,6 +85,9 @@ turnOverTrickM = TurnOverTrick Done
 playerAfterM :: Player -> Game Player
 playerAfterM player = PlayerAfter player Done
 
+isGameOverM :: Game Player
+isGameOverM = IsGameOver Done
+
 -- Ergebnis: der Ablauf, der passiert, wenn das Command behandelt wird
 tableProcessCommand :: GameCommand -> Game (Maybe Player)
 tableProcessCommand (DealHands hands) = undefined
@@ -102,6 +105,10 @@ tableProcessCommand (PlayCard player card) = do
                     nextPlayer <- playerAfterM player
                     recordEventM (PlayerTurnChanged nextPlayer)
                     return Nothing -- es gibt noch keinen Gewinner
+                Just (trickTaker, trick) -> do
+                    recordEventM (TrickTaken trickTaker trick)
+                    potentialWinner <- isGameOverM
+                    undefined
         else do 
             recordEventM (IllegalCardAttempted player card)
             return Nothing -- Nothing == Null
