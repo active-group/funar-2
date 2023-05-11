@@ -89,6 +89,10 @@ negatePayment :: Payment -> Payment
 negatePayment (Payment ForMe d a c) = Payment ForSomeoneElse d a c
 negatePayment (Payment ForSomeoneElse d a c) = Payment ForMe d a c
 
+scalePayment :: Amount -> Payment -> Payment
+scalePayment amount (Payment dir date x curr) =
+    Payment dir date (amount * x) curr
+
 -- Welche Zahlungen entstehen, wenn ich den Vertrag am Datum x anschaue?
 --                       v   "jetzt"
 --                               v   Restvertrag (was ist noch zu erledigen?)
