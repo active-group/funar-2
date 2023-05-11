@@ -31,6 +31,11 @@ data Currency = EUR | GBP | USD | YEN
 zcb :: Contract
 zcb = AtDate (MkDate "24.12.2023") (Times 100 (One EUR))
 
+makeZcp :: Date -> Amount -> Currency -> Contract
+makeZcp d a c = AtDate d (Times a (One c))
+
+-- AtDate 24.12.2023 (AtDate 6.10.2024 (Times 250 (One YEN)))
+
 -- Elementare Bestandteile:
 --  -- Menge
 --  -- Währung
