@@ -65,6 +65,10 @@ instance Semigroup Contract where
     -- op :: Contract -> Contract -> Contract
     (<>) c1 c2 = Both c1 c2
 
+instance Monoid Contract where
+    -- neutral :: Contract
+    mempty = Empty
+
 currencySwap :: Date -> (Amount, Currency) -> (Amount, Currency) -> Contract
 currencySwap date (myAmount, myCurrency) (theirAmount, theirCurrency) =
     -- AtDate date (Both (Times myAmount (One myCurrency))
