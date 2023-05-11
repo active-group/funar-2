@@ -79,7 +79,7 @@ turnOverTrickM :: GameEvent -> Game ()
 turnOverTrickM = TurnOverTrick Done
 
 playerAfterM :: Player -> Game ()
-playerAfterM player = PlayerAfter playeer Done
+playerAfterM player = PlayerAfter player Done
 
 -- Ergebnis: der Ablauf, der passiert, wenn das Command behandelt wird
 tableProcessCommand :: GameCommand -> Game (Maybe Player)
