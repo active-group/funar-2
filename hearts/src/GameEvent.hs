@@ -75,7 +75,7 @@ isCardValidM player card = IsCardValid player card (\b -> Done b)
 recordEventM :: GameEvent -> Game ()
 recordEventM evt = RecordEvent evt Done
 
-turnOverTrickM :: GameEvent -> Game ()
+turnOverTrickM :: Game ()
 turnOverTrickM = TurnOverTrick Done
 
 playerAfterM :: Player -> Game ()
@@ -96,6 +96,7 @@ tableProcessCommand (PlayCard player card) = do
                 Nothing -> do
                     -- brauchen nächsten Spieler
                     nextPlayer <- playerAfterM player
+                    undefined
         else do 
             recordEventM (IllegalCardAttempted player card)
             return Nothing -- Nothing == Null
