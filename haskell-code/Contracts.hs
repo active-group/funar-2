@@ -86,4 +86,4 @@ data Payment = Payment Direction Date Amount Currency
 
 -- Welche Zahlungen entstehen, wenn ich den Vertrag am Datum x anschaue?
 --                       v   "jetzt"
-semantics :: Contract -> Date -> [Payment]
+semantics :: Contract -> Date -> (Contract, [Payment])
