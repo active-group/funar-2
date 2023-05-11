@@ -60,3 +60,7 @@ data Contract
     | Negate Contract
     deriving Show
 
+currencySwap :: Date -> (Amount, Currency) -> (Amount, Currency) -> Contract
+currencySwap date (myAmount, myCurrency) (theirAmount, theirCurrency) =
+    AtDate date (Both (Times myAmount (One myCurrency))
+                      (Negate (Times theirAmount (One theirCurrency))))
