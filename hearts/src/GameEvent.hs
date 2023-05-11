@@ -55,6 +55,7 @@ data Game a =
     | RecordEvent GameEvent (() -> Game a)
     | TurnOverTrick (Maybe (Player, Trick) -> Game a)
     | PlayerAfter Player (Player -> Game a)
+    | IsGameOver (Maybe Player -> Game a)
     | Done a
 
 instance Functor Game where
@@ -71,6 +72,8 @@ instance Monad Game where
         TurnOverTrick (\b -> (>>=) (callback b) next)
     (>>=) (PlayerAfter player callback) next =
         PlayerAfter player (\b -> (>>=) (callback b) next)
+    (>>=) (IsGameOver callback) next =
+        IsGameOver (\b -> (>>=) (callback b) next)
     return = Done
 
 isCardValidM :: Player -> Card -> Game Bool
