@@ -98,4 +98,5 @@ semantics (Times amount inner) now = undefined
 semantics contract@(AtDate date inner) now =
     if date > now
         then (contract, [])  -- es passiert noch nichts
+        else semantics inner now  -- inneren Vertrag auswerten
 semantics Empty _ = (Empty, [])
